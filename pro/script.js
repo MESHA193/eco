@@ -1167,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Contact form handler (общая форма на страницах)
+        // Отправка формы контактов теперь идёт напрямую через action
         const contactFormEl = document.getElementById('contactForm');
         if (contactFormEl) {
             contactFormEl.addEventListener('submit', async function (e) {

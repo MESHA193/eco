@@ -192,7 +192,11 @@
             <h2 class="form-title">✉️ Напишите нам</h2>
             <p class="form-subtitle">Заполните форму ниже, и мы свяжемся с вами в ближайшее время</p>
 
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/mafonin474@gmail.com">
+                <input type="hidden" name="_subject" value="Новая заявка с сайта ПРОЭКО">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="/contacts.html?success=1">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Имя *</label>
