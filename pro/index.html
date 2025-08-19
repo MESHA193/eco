@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ПРОЭКО — Экологическая компания</title>
+    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="services-cards.css">
+    <link rel="stylesheet" href="mobile-background-control.css">
+    <link rel="stylesheet" href="stats-horizontal.css">
+    <link rel="stylesheet" href="mobile-hero-height.css">
+    <link rel="stylesheet" href="mobile-stats-fix.css">
+    <link rel="stylesheet" href="mobile-text-fix.css">
+    <link rel="stylesheet" href="floating-contact.css">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="mobile-menu-fix.css">
+    <link rel="stylesheet" href="contacts.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="nav-contacts.css">
+    <link rel="stylesheet" href="prices-carousel.css">
+    <link rel="stylesheet" href="mobile-modal-fix.css">
+    <link rel="stylesheet" href="emergency-close-fix.css">
+    <link rel="stylesheet" href="mobile-sections-spacing.css">
+    <link rel="stylesheet" href="modal-fix-aggressive.css">
+    <link rel="stylesheet" href="pricing-grid-fix.css">
+    <link rel="stylesheet" href="mobile-prices-carousel.css">
+    <link rel="stylesheet" href="mobile-team-carousel.css">
+    <link rel="stylesheet" href="mobile-services-grid.css">
+    <link rel="stylesheet" href="mobile-media-section.css">
+    <link rel="stylesheet" href="mobile-contacts-fix.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- СТИЛИ ДЛЯ СКРЫТИЯ НАВИГАЦИИ -->
+    <style>
+        .modern-nav {
+            transition: transform 0.3s ease !important;
+        }
+
+        .modern-nav.nav-hidden {
+            transform: translateY(-100%) !important;
+        }
+
+        /* ПРИНУДИТЕЛЬНЫЕ МОБИЛЬНЫЕ СТИЛИ ДЛЯ КАРТОЧЕК СТАТИСТИКИ */
+        @media (max-width: 768px) {
+
+            .stat-item,
+            div.stat-item,
+            .stats-grid .stat-item,
+            .stats-container .stat-item {
+                margin-top: 3rem !important;
+                width: 48% !important;
+                min-width: 160px !important;
+                max-width: 200px !important;
+                padding: 2rem 1.5rem !important;
+                margin-bottom: 2rem !important;
+                font-size: 1.1rem !important;
+            }
+
+            .stats-container,
+            .stats-grid,
+            div.stats-container,
+            div.stats-grid {
+                gap: 2rem !important;
+                margin-top: 4rem !important;
+                justify-content: center !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+
+            .stat-number {
+                font-size: 2.5rem !important;
+            }
+
+            .stat-label {
+                font-size: 1rem !important;
+                margin-top: 0.5rem !important;
+            }
+        }
+
+        /* ПРОЗРАЧНЫЙ ФОН ТОЛЬКО ДЛЯ КОНТЕЙНЕРА МОБИЛЬНОГО МЕНЮ */
+        .mobile-menu {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+
+        /* СТИЛИ КНОПОК СВЯЗИ И ПОЧТЫ КАК У КНОПОК НАВИГАЦИИ */
+        .modern-nav .nav-contact .btn-compact,
+        .nav-contact .btn-compact {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            color: white !important;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3) !important;
+        }
+
+        .modern-nav .nav-contact .btn-compact:hover,
+        .nav-contact .btn-compact:hover {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            color: white !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4) !important;
+        }
+
+        /* ПРИНУДИТЕЛЬНОЕ УПРАВЛЕНИЕ МОБИЛЬНЫМ МЕНЮ */
+        .mobile-menu {
+            display: none !important;
+        }
+
+        .mobile-menu.open {
+            display: block !important;
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        /* ИСПРАВЛЕНИЕ БЕЛОЙ ПОЛОСЫ СПРАВА НА МОБИЛЬНОЙ ВЕРСИИ */
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .modern-nav {
+                width: 100% !important;
+                max-width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                padding: 0 1rem !important;
+                box-sizing: border-box !important;
+            }
+
+            .nav-brand {
+                flex-shrink: 0 !important;
+            }
+
+            .hero-actions {
+                flex: 1 !important;
+                justify-content: center !important;
+                gap: 0.5rem !important;
+                flex-wrap: wrap !important;
+            }
+
+            .mobile-nav-contact {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin-right: 0.5rem !important;
+                z-index: 1001 !important;
+                position: relative !important;
+            }
+
+            /* Стили для кнопок в мобильных контактах */
+            .mobile-nav-contact .btn.primary.btn-compact {
+                background: linear-gradient(135deg, #a8ff78, #78ffd6) !important;
+                color: #166534 !important;
+                border: 2px solid #a8ff78 !important;
+                box-shadow: 0 2px 16px #a8ff7899 !important;
+                border-radius: 50px !important;
+                font-weight: 700 !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+
+            .mobile-nav-contact .btn.primary.btn-compact:hover {
+                background: linear-gradient(135deg, #78ffd6, #a8ff78) !important;
+                color: #166534 !important;
+                border-color: #78ffd6 !important;
+                box-shadow: 0 4px 32px #a8ff7855, 0 8px 25px #78ffd655 !important;
+                transform: translateY(-2px) scale(1.05) !important;
+            }
+
+            /* ПРИНУДИТЕЛЬНОЕ ОТОБРАЖЕНИЕ МОБИЛЬНЫХ КОНТАКТОВ */
+            @media (max-width: 768px) {
+                .mobile-nav-contact {
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+
+                .mobile-nav-contact .btn.primary.btn-compact {
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+            }
+
+            .mobile-nav-right {
+                flex-shrink: 0 !important;
+                margin-left: auto !important;
+            }
+
+            .nav-toggle {
+                width: 30px !important;
+                height: 30px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 4px !important;
+                cursor: pointer !important;
+            }
+
+            .nav-toggle span {
+                width: 25px !important;
+                height: 3px !important;
+                background: #059669 !important;
+                border-radius: 2px !important;
+                transition: all 0.3s ease !important;
+                display: block !important;
+            }
+
+            /* Анимация гамбургера в крестик */
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px) !important;
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0 !important;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px) !important;
+            }
+
+            /* Стили мобильного меню перенесены в mobile-menu-fix.css */
+
+            /* ИСПРАВЛЕНИЕ КНОПОК "ЗАКАЗАТЬ УСЛУГУ" НА МОБИЛЬНОЙ ВЕРСИИ */
+            .btn.primary.full-width {
+                background: linear-gradient(135deg, #a8ff78, #78ffd6) !important;
+                color: #166534 !important;
+                border: 2px solid #a8ff78 !important;
+                box-shadow: 0 2px 16px #a8ff7899 !important;
+                border-radius: 50px !important;
+                font-weight: 700 !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+
+            .btn.primary.full-width:hover {
+                background: linear-gradient(135deg, #78ffd6, #a8ff78) !important;
+                color: #166534 !important;
+                border-color: #78ffd6 !important;
+                box-shadow: 0 4px 32px #a8ff7855, 0 8px 25px #78ffd655 !important;
+                transform: translateY(-2px) scale(1.05) !important;
+            }
+        }
+    </style>
+
+    <!-- Принудительные стили для растягивания секции контактов -->
+    <style>
+        /* Растягиваем секцию контактов до футера */
+        .contacts-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%) !important;
+            background-image: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%) !important;
+            background-color: #10b981 !important;
+            min-height: calc(100vh - 200px) !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 2rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        /* Убираем отступы у футера */
+        .modern-footer {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у всех элементов футера */
+        .footer {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .footer-row {
+            margin: 0 !important;
+            padding: 1.5rem !important;
+        }
+
+        .footer-bottom-mini {
+            margin: 0 !important;
+            padding: 1rem 1.5rem !important;
+        }
+
+        /* Убираем отступы у всех элементов внутри футера */
+        .footer * {
+            margin-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у последнего элемента футера */
+        .footer>*:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Убираем все возможные отступы у последнего элемента */
+        .contacts-container {
+            margin-bottom: 0 !important;
+        }
+
+        /* Принудительно убираем все отступы */
+        body .contacts-section,
+        html .contacts-section,
+        .section.contacts-section {
+            margin-bottom: 0 !important;
+            padding-bottom: 2rem !important;
+            min-height: calc(200vh - 200px) !important;
+        }
+
+        /* Убираем отступы у всех элементов внутри секции */
+        .contacts-section * {
+            margin-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у последнего элемента */
+        .contacts-section>*:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Настраиваем body и main для flexbox */
+        body {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        /* Принудительные стили для подвала */
+        .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 0 !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(0) !important;
+            flex: 1 !important;
+        }
+
+        .footer-social {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            transform: translateX(0) !important;
+        }
+
+        /* Дополнительные принудительные стили */
+        footer .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 25% !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(25%) !important;
+        }
+
+        footer .footer-social {
+            margin-left: auto !important;
+            margin-right: 20px !important;
+            transform: translateX(20px) !important;
+        }
+
+        .modern-footer .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 25% !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(25%) !important;
+        }
+
+        .modern-footer .footer-social {
+            margin-left: auto !important;
+            margin-right: 20px !important;
+            transform: translateX(20px) !important;
+        }
+
+        /* Максимальный приоритет для подвала */
+        html body .modern-footer .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 25% !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(25%) !important;
+            position: relative !important;
+            left: 25% !important;
+        }
+
+        html body .modern-footer .footer-social {
+            margin-left: auto !important;
+            margin-right: 20px !important;
+            transform: translateX(20px) !important;
+            position: relative !important;
+            right: 20px !important;
+        }
+
+        body {
+            min-height: 100vh !important;
+        }
+
+        main {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        /* Принудительно растягиваем секцию контактов */
+        .contacts-section {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+        }
+
+        /* Убираем все возможные отступы между секцией и футером */
+        main {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у всех секций */
+        .section {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у всех элементов внутри main */
+        main * {
+            margin-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у последнего элемента в main */
+        main>*:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Принудительно убираем все отступы */
+        body * {
+            margin-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у всех элементов */
+        * {
+            margin-bottom: 0 !important;
+        }
+
+        /* Позиция копирайта - настраивается здесь для мобильной версии */
+        @media (max-width: 768px) {
+            .footer-bottom-mini {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding: 1rem 2rem !important;
+            }
+
+            .footer-bottom-mini span {
+                text-align: center !important;
+                /* ← ЗДЕСЬ МЕНЯЙТЕ: left/center/right */
+                margin: 0 auto !important;
+                display: block !important;
+                width: 100% !important;
+                padding-left: 0 !important;
+                /* ← ЗДЕСЬ МЕНЯЙТЕ: сдвиг вправо */
+                transform: translateX(0) !important;
+                /* ← ЗДЕСЬ МЕНЯЙТЕ: точная настройка */
+            }
+        }
+
+        /* Принудительное центрирование контактов в подвале */
+        .footer-contacts-center {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            align-items: center !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            flex: 1 !important;
+        }
+
+        /* Центрируем весь footer-row с помощью flexbox */
+        .footer-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        /* Логотип остается слева */
+        .footer-logo-block {
+            flex: 0 0 auto !important;
+        }
+
+        /* Контакты по центру */
+        .footer-contacts-center {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        /* Соцсети справа */
+        .footer-social-right {
+            flex: 0 0 auto !important;
+        }
+    </style>
+
+    <!-- ПРИНУДИТЕЛЬНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ МОДАЛЬНЫХ ОКОН -->
+    <style>
+        @media (max-width: 600px) {
+
+            /* МАКСИМАЛЬНЫЙ ПРИОРИТЕТ ДЛЯ КРЕСТИКА - ПОДНИМАЕМ ВЫШЕ */
+            html body .service-modal .service-modal-content .service-modal-header .modal-close,
+            html body .service-modal-header .modal-close.modal-header-btn.modal-close-btn,
+            html body .service-modal-header .modal-close.modal-header-btn,
+            html body .service-modal_header .modal-close,
+            .service-modal .service-modal-content .service-modal-header .modal-close,
+            .service-modal-header .modal-close.modal-header-btn.modal-close-btn,
+            .service-modal-header .modal-close.modal-header-btn,
+            .service-modal-header .modal-close {
+                top: -5px !important;
+                position: absolute !important;
+                right: 20px !important;
+                z-index: 25 !important;
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 50% !important;
+                color: #ef4444 !important;
+                border: 1px solid rgba(239, 68, 68, 0.3) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 20px !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+                backdrop-filter: blur(10px) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            /* МАКСИМАЛЬНЫЙ ПРИОРИТЕТ ДЛЯ КНОПКИ НАЗАД - ПОДНИМАЕМ НА 10px */
+            html body .service-modal .service-modal-content .service-modal-header #subserviceBackToListBtn,
+            html body .service-modal_header #subserviceBackToListBtn.modal-header-btn,
+            html body .service-modal_header #subserviceBackToListBtn,
+            .service-modal .service-modal-content .service-modal-header #subserviceBackToListBtn,
+            .service-modal-header #subserviceBackToListBtn.modal-header-btn,
+            .service-modal-header #subserviceBackToListBtn,
+            #subserviceBackToListBtn {
+                top: 10px !important;
+                position: absolute !important;
+                right: 20px !important;
+                z-index: 25 !important;
+                width: 75px !important;
+                height: 50px !important;
+                border-radius: 25px !important;
+                color: #10b981 !important;
+                border: 1px solid rgba(16, 185, 129, 0.3) !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+                backdrop-filter: blur(10px) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+                padding: 0 10px !important;
+                min-width: 75px !important;
+                max-width: 75px !important;
+            }
+        }
+
+        /* ИСПРАВЛЕНИЕ БЕЛОЙ ПОЛОСЫ МЕЖДУ HERO И SERVICES */
+        #hero-container {
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .hero-section {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #services,
+        .services-section {
+            margin-top: 0 !important;
+            padding-top: 2rem !important;
+        }
+
+        .main-content {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Для мобильной версии - УСИЛЕННЫЕ СТИЛИ */
+        @media (max-width: 768px) {
+
+            /* Убираем ВСЕ отступы у hero контейнера на мобильных */
+            #hero-container,
+            div#hero-container {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+                border-bottom: none !important;
+            }
+
+            /* Убираем отступы у hero секции внутри контейнера */
+            #hero-container .hero-section,
+            #hero-container section,
+            .hero-section {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+                border-bottom: none !important;
+            }
+
+            /* Принудительно убираем отступы у services */
+            #services,
+            .services-section,
+            section#services,
+            section.services-section {
+                margin-top: 0 !important;
+                padding-top: 3rem !important;
+                border-top: none !important;
+            }
+
+            /* Дополнительный отступ для заголовка секции услуг */
+            #services .section-header,
+            .services-section .section-header {
+                padding-top: 1rem !important;
+                margin-top: 1rem !important;
+            }
+
+            /* КОНТЕЙНЕР ДЛЯ КАРУСЕЛИ УСЛУГ С НАВИГАЦИЕЙ */
+            #services .services-carousel-container {
+                position: relative !important;
+                width: 100% !important;
+                margin: 1.5rem 0 !important;
+            }
+
+            /* ГОРИЗОНТАЛЬНАЯ ПРОКРУТКА КАРТОЧЕК УСЛУГ С ПРАВИЛЬНЫМ ЦЕНТРИРОВАНИЕМ */
+            #services div[style*="grid-template-columns"] {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 1.5rem !important;
+                padding: 1rem calc(50vw - 140px) !important;
+                /* Центрирование первой карточки */
+                margin: 0 !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+                scroll-behavior: smooth !important;
+            }
+
+            /* Скрываем скроллбар в WebKit браузерах */
+            #services div[style*="grid-template-columns"]::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            /* Карточки услуг - фиксированная ширина с центрированием */
+            #services .service-card-animated {
+                flex: 0 0 280px !important;
+                scroll-snap-align: center !important;
+                margin: 0 !important;
+            }
+
+            /* СТРЕЛОЧКИ НАВИГАЦИИ - СТИЛЬ КАК У КАРУСЕЛИ КОМАНДЫ С ЗЕЛЕНЫМ КОНТУРОМ */
+            .services-nav-arrow {
+                position: absolute !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                background: rgba(255, 255, 255, 0.9) !important;
+                border: 1px solid #059669 !important;
+                /* Тонкий зеленый контур */
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 50% !important;
+                font-size: 1.5rem !important;
+                color: #059669 !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+                z-index: 10 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .services-nav-arrow:hover {
+                background: rgba(255, 255, 255, 1) !important;
+                transform: translateY(-50%) scale(1.1) !important;
+            }
+
+            .services-nav-arrow.prev {
+                left: 20px !important;
+            }
+
+            .services-nav-arrow.next {
+                right: 20px !important;
+            }
+
+            /* Скрытие стрелок */
+            .services-nav-arrow.hidden {
+                opacity: 0 !important;
+                pointer-events: none !important;
+                transform: translateY(-50%) scale(0.8) !important;
+            }
+
+            /* Показываем стрелочки только на мобильной версии */
+            .services-nav-arrow {
+                display: flex !important;
+            }
+
+            /* Скрытие стрелок услуг */
+            .services-nav-arrow.hidden {
+                opacity: 0 !important;
+                pointer-events: none !important;
+                transform: translateY(-50%) scale(0.8) !important;
+            }
+        }
+
+        /* Скрываем стрелочки на десктопе */
+        @media (min-width: 769px) {
+            .services-nav-arrow {
+                display: none !important;
+            }
+
+            /* Убираем отступы у main-content */
+            .main-content,
+            main.main-content {
+                margin: 0 !important;
+                padding: 0 !important;
+                gap: 0 !important;
+            }
+
+            /* Убираем отступы у всех дочерних элементов main */
+            .main-content>*,
+            main.main-content>* {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Якоря для навигации удалены для избежания конфликтов ID -->
+
+    <!-- Навигация -->
+    <!-- Современная навигация -->
+    <nav class="modern-nav" id="modernNav">
+        <div class="nav-brand" onclick="scrollToTop()" style="cursor: pointer;">
+            <img src="images/log.png" alt="ПРОЭКО" class="nav-logo">
+            <span class="nav-title">ПРОЭКО</span>
+        </div>
+        <div class="hero-actions animate-slide-up">
+            <button class="btn primary" onclick="scrollToSection('services')">Наши услуги</button>
+            <button class="btn primary" onclick="scrollToSection('prices')">Акции</button>
+            <button class="btn primary" id="calendarBtn" type="button"
+                onclick="scrollToSection('hero-container')">Календарь
+                эколога</button>
+            <button class="btn primary" onclick="scrollToSection('about')">О нас</button>
+            <button class="btn primary" onclick="scrollToSection('contacts')">Связаться</button>
+        </div>
+        <div class="nav-right">
+            <div class="nav-contact nav-contact-compact"
+                style="display: flex !important; flex-direction: column !important; gap: 0.15rem !important; align-items: flex-start !important; margin-left: 2rem !important; justify-content: center !important; height: 100% !important;">
+                <!-- Телефон -->
+                <a href="tel:7 (918) 45 44 600" class="btn primary btn-compact"
+                    style="white-space: nowrap; min-width: 0; padding: 0.25rem 0.6rem; font-size: 0.75rem; height: 28px; display: flex; align-items: center;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span class="contact-text">+7 (918) 454-46-00</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:proeco.kr@yandex.ru" class="btn primary btn-compact"
+                    style="white-space: nowrap; min-width: 0; padding: 0.25rem 0.6rem; font-size: 0.75rem; height: 28px; display: flex; align-items: center;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                        </path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="contact-text">proeco.kr@yandex.ru</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Контактные кнопки в центре мобильной шапки -->
+        <div class="mobile-nav-contact">
+            <!-- Телефон -->
+            <a href="tel:7 (918) 45 44 600" class="btn primary btn-compact"
+                style="white-space: nowrap; min-width: 0; padding: 0.25rem 0.6rem; font-size: 0.75rem; height: 28px; display: flex; align-items: center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                <span class="contact-text">+7 (918) 45 44 600</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:proeco.kr@yandex.ru" class="btn primary btn-compact"
+                style="white-space: nowrap; min-width: 0; padding: 0.25rem 0.6rem; font-size: 0.75rem; height: 28px; display: flex; align-items: center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                    </path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="contact-text">info@proeco.ru</span>
+            </a>
+        </div>
+
+        <!-- Гамбургер меню справа -->
+        <div class="mobile-nav-right">
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Мобильное меню для дополнительных опций -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-items">
+            <a href="#" class="mobile-menu-item" onclick="scrollToSection('services'); closeMobileMenu();">Наши
+                услуги</a>
+            <a href="#" class="mobile-menu-item" onclick="scrollToSection('prices'); closeMobileMenu();">Акции</a>
+            <a href="#" class="mobile-menu-item"
+                onclick="scrollToSection('hero-container'); closeMobileMenu();">Календарь эколога</a>
+            <a href="#" class="mobile-menu-item" onclick="scrollToSection('about'); closeMobileMenu();">О компании</a>
+            <a href="#" class="mobile-menu-item" onclick="scrollToSection('contacts'); closeMobileMenu();">Связаться</a>
+        </div>
+    </div>
+
+    <!-- Индикатор прогресса прокрутки -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Главная секция -->
+        <div id="hero-container"></div>
+
+        <!-- Секция услуг -->
+        <section id="services" class="section services-section">
+            <div class="section-header">
+                <h2 class="section-title">Наши услуги</h2>
+                <p class="section-subtitle">Комплексные экологические решения для вашего бизнеса</p>
+            </div>
+
+            <!-- Контейнер карусели с навигацией (только для мобильной версии) -->
+            <div class="services-carousel-container" style="position: relative;">
+                <!-- Стрелочки навигации (скрыты на десктопе) -->
+                <button class="services-nav-arrow prev" onclick="scrollServicesCarousel('prev')"
+                    style="display: none;">‹</button>
+                <button class="services-nav-arrow next" onclick="scrollServicesCarousel('next')"
+                    style="display: none;">›</button>
+
+                <div id="services-grid"
+                    style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin: 1.5rem 0; width: 100%; padding: 0; box-sizing: border-box;">
+                    <!-- 1. Проектирование -->
+                    <div class="service-card-animated"
+                        style="background: white; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(229, 231, 235, 0.8); height: 320px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.3)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.1)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #059669, #047857)'; this.querySelector('.service-button').style.transform='translateY(-2px)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 3px 15px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(229, 231, 235, 0.8)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.3)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #10b981, #059669)'; this.querySelector('.service-button').style.transform='translateY(0)';"
+                        onclick="openServiceModal('design')">
+                        <!-- Верхняя часть с фоновым изображением -->
+                        <div
+                            style="height: 50%; background: url('images/1.jpg') center/cover no-repeat; position: relative; transition: all 0.3s ease;">
+                            <div class="image-overlay"
+                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px 12px 0 0; transition: all 0.3s ease;">
+                            </div>
+                        </div>
+                        <!-- Нижняя часть с текстом -->
+                        <div style="height: 50%; padding: 1rem; display: flex; flex-direction: column;">
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3
+                                    style="font-size: 1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.2; transition: color 0.3s ease;">
+                                    Проектирование</h3>
+                                <p
+                                    style="color: #6b7280; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.8rem; transition: color 0.3s ease; flex: 1;">
+                                    Разработка проектной документации для экологических объектов и систем</p>
+                            </div>
+                            <button class="service-button"
+                                style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease; margin-top: auto;">
+                                Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Отчетность -->
+                    <div class="service-card-animated"
+                        style="background: white; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(229, 231, 235, 0.8); height: 320px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.3)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.1)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #059669, #047857)'; this.querySelector('.service-button').style.transform='translateY(-2px)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 3px 15px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(229, 231, 235, 0.8)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.3)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #10b981, #059669)'; this.querySelector('.service-button').style.transform='translateY(0)';"
+                        onclick="openServiceModal('reporting')">
+                        <!-- Верхняя часть с фоновым изображением -->
+                        <div
+                            style="height: 50%; background: url('images/2.jpg') center/cover no-repeat; position: relative; transition: all 0.3s ease;">
+                            <div class="image-overlay"
+                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px 12px 0 0; transition: all 0.3s ease;">
+                            </div>
+                        </div>
+                        <!-- Нижняя часть с текстом -->
+                        <div style="height: 50%; padding: 1rem; display: flex; flex-direction: column;">
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3
+                                    style="font-size: 1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.2; transition: color 0.3s ease;">
+                                    Отчетность</h3>
+                                <p
+                                    style="color: #6b7280; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.8rem; transition: color 0.3s ease; flex: 1;">
+                                    Подготовка экологической отчетности и документооборот</p>
+                            </div>
+                            <button class="service-button"
+                                style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease; margin-top: auto;">
+                                Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Экологическое сопровождение -->
+                    <div class="service-card-animated"
+                        style="background: white; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(229, 231, 235, 0.8); height: 320px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.3)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.1)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #059669, #047857)'; this.querySelector('.service-button').style.transform='translateY(-2px)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 3px 15px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(229, 231, 235, 0.8)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.3)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #10b981, #059669)'; this.querySelector('.service-button').style.transform='translateY(0)';"
+                        onclick="openServiceModal('support')">
+                        <!-- Верхняя часть с фоновым изображением -->
+                        <div
+                            style="height: 50%; background: url('images/3.jpg') center/cover no-repeat; position: relative; transition: all 0.3s ease;">
+                            <div class="image-overlay"
+                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px 12px 0 0; transition: all 0.3s ease;">
+                            </div>
+                        </div>
+                        <!-- Нижняя часть с текстом -->
+                        <div style="height: 50%; padding: 1rem; display: flex; flex-direction: column;">
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3
+                                    style="font-size: 1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.2; transition: color 0.3s ease;">
+                                    Экологическое сопровождение</h3>
+                                <p
+                                    style="color: #6b7280; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.8rem; transition: color 0.3s ease; flex: 1;">
+                                    Комплексное экологическое сопровождение деятельности</p>
+                            </div>
+                            <button class="service-button"
+                                style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease; margin-top: auto;">
+                                Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Экологический аудит -->
+                    <div class="service-card-animated"
+                        style="background: white; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(229, 231, 235, 0.8); height: 320px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.3)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.1)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #059669, #047857)'; this.querySelector('.service-button').style.transform='translateY(-2px)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 3px 15px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(229, 231, 235, 0.8)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.3)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #10b981, #059669)'; this.querySelector('.service-button').style.transform='translateY(0)';"
+                        onclick="openServiceModal('audit')">
+                        <!-- Верхняя часть с фоновым изображением -->
+                        <div
+                            style="height: 50%; background: url('images/4.jpg') center/cover no-repeat; position: relative; transition: all 0.3s ease;">
+                            <div class="image-overlay"
+                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px 12px 0 0; transition: all 0.3s ease;">
+                            </div>
+                        </div>
+                        <!-- Нижняя часть с текстом -->
+                        <div style="height: 50%; padding: 1rem; display: flex; flex-direction: column;">
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3
+                                    style="font-size: 1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.2; transition: color 0.3s ease;">
+                                    Экологический аудит</h3>
+                                <p
+                                    style="color: #6b7280; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.8rem; transition: color 0.3s ease; flex: 1;">
+                                    Оценка соответствия экологическим требованиям</p>
+                            </div>
+                            <button class="service-button"
+                                style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease; margin-top: auto;">
+                                Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- 5. Паспортизация отходов -->
+                    <div class="service-card-animated"
+                        style="background: white; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(229, 231, 235, 0.8); height: 320px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.3)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.1)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #059669, #047857)'; this.querySelector('.service-button').style.transform='translateY(-2px)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 3px 15px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(229, 231, 235, 0.8)'; this.querySelector('.image-overlay').style.background='rgba(0, 0, 0, 0.3)'; this.querySelector('.service-button').style.background='linear-gradient(135deg, #10b981, #059669)'; this.querySelector('.service-button').style.transform='translateY(0)';"
+                        onclick="openServiceModal('passportization')">
+                        <!-- Верхняя часть с фоновым изображением -->
+                        <div
+                            style="height: 50%; background: url('images/5.jpg') center/cover no-repeat; position: relative; transition: all 0.3s ease;">
+                            <div class="image-overlay"
+                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px 12px 0 0; transition: all 0.3s ease;">
+                            </div>
+                        </div>
+                        <!-- Нижняя часть с текстом -->
+                        <div style="height: 50%; padding: 1rem; display: flex; flex-direction: column;">
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3
+                                    style="font-size: 1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.2; transition: color 0.3s ease;">
+                                    Паспортизация отходов</h3>
+                                <p
+                                    style="color: #6b7280; font-size: 0.85rem; line-height: 1.3; margin-bottom: 0.8rem; transition: color 0.3s ease; flex: 1;">
+                                    Разработка паспортов отходов и экологических документов</p>
+                            </div>
+                            <button class="service-button"
+                                style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease; margin-top: auto;">
+                                Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Модальные окна услуг -->
+        <div id="serviceModal" class="service-modal">
+            <div class="service-modal-content">
+                <div class="service-modal-header">
+                    <div class="modal-header-content">
+                        <div class="modal-icon" id="modalIcon">🏭</div>
+                        <h3 id="modalTitle">Название услуги</h3>
+                    </div>
+                    <div class="modal-header-controls">
+                        <button id="serviceBackBtn" class="modal-header-btn modal-back-btn" style="display: none;"
+                            onclick="closeServiceModal()">
+                            ←
+                        </button>
+                        <button class="modal-header-btn modal-close-btn" onclick="window.location.reload()">
+                            ×
+                        </button>
+                    </div>
+                </div>
+
+                <div class="service-modal-body">
+                    <div class="modal-description" id="modalDescription">
+                        Описание услуги будет здесь
+                    </div>
+
+                    <div class="subservices-grid" id="subservicesGrid">
+                        <!-- Подуслуги будут добавлены динамически -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно для заказа подуслуги -->
+        <div id="subserviceOrderModal" class="service-modal">
+            <div class="service-modal-content">
+                <div class="service-modal-header">
+                    <div class="modal-header-content">
+                        <div class="modal-icon" id="subserviceModalIcon">📋</div>
+                        <h3 id="subserviceModalTitle">Название подуслуги</h3>
+                    </div>
+                    <div class="modal-header-controls">
+                        <button id="subserviceBackToListBtn" class="modal-header-btn modal-back-btn"
+                            onclick="backToServiceList()">
+                            Назад
+                        </button>
+                        <button class="modal-header-btn modal-close-btn" onclick="window.location.reload()">
+                            ×
+                        </button>
+                    </div>
+                </div>
+
+                <div class="service-modal-body">
+                    <div class="modal-description" id="subserviceModalDescription"
+                        style="margin-bottom: 1rem !important; padding-bottom: 2rem !important;">
+                        Описание подуслуги
+                    </div>
+
+                    <div class="modal-info-grid"
+                        style="margin-top: 1rem !important; position: relative !important; z-index: 1 !important; clear: both !important;">
+                        <div class="modal-price" id="subserviceModalPrice">
+                            <div class="info-icon">💰</div>
+                            <div class="info-content">
+                                <span class="price-label">Стоимость</span>
+                                <span class="price-value">от 5 000 ₽</span>
+                            </div>
+                        </div>
+                        <div class="modal-duration">
+                            <div class="info-icon">⏱️</div>
+                            <div class="info-content">
+                                <span class="duration-label">Срок выполнения</span>
+                                <span class="duration-value" id="subserviceModalDuration">5-7 рабочих дней</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Дополнительная информация -->
+                    <div class="modal-detailed-info">
+                        <div class="info-section" id="subserviceModalWhoNeeds" style="display: none;">
+                            <h4>Кому нужно разрабатывать эту документацию?</h4>
+                            <p class="info-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalValidity" style="display: none;">
+                            <h4>Срок действия:</h4>
+                            <p class="info-text"></p>
+                        </div>
+
+
+
+                        <div class="info-section" id="subserviceModalApproval" style="display: none;">
+                            <h4>Согласование:</h4>
+                            <p class="info-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalBonus" style="display: none;">
+                            <h4>Специальное предложение:</h4>
+                            <p class="info-text bonus-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalDiscount" style="display: none;">
+                            <h4>Скидка:</h4>
+                            <p class="info-text discount-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalNecessaryFor" style="display: none;">
+                            <h4>Необходимо для:</h4>
+                            <p class="info-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalAdditionalInfo" style="display: none;">
+                            <h4>Дополнительная информация:</h4>
+                            <p class="info-text"></p>
+                        </div>
+
+                        <div class="info-section" id="subserviceModalNec" style="display: none;">
+                            <h4>Необходимо произвести корректировку, если произошло:</h4>
+                            <p class="info-text"></p>
+                        </div>
+                    </div>
+
+                    <div class="modal-features" id="subserviceModalFeatures">
+                        <h4>Что входит в услугу:</h4>
+                        <ul id="subserviceModalFeaturesList">
+                            <!-- Список особенностей -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-modal-footer">
+                    <div class="modal-form-section">
+                        <h4>Заказать услугу</h4>
+                        <form class="modal-order-form" onsubmit="submitSubserviceOrder(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Ваше имя *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Телефон *" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="company" placeholder="Название компании">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message"
+                                    placeholder="Дополнительная информация о проекте, особые требования..."
+                                    rows="4"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary form-submit-btn">
+                                    Отправить заявку
+                                </button>
+                                <button type="button" class="btn secondary modal-call-btn"
+                                    onclick="window.open('tel:+7 (918) 45 44 600')">
+                                    Позвонить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Общее модальное окно заказа услуги (используется кнопками в секции Акции) -->
+        <div id="orderModal" class="service-modal" style="display: none;">
+            <div class="service-modal-content">
+                <div class="service-modal-header">
+                    <div class="modal-header-content">
+                        <div class="modal-icon">✉️</div>
+                        <h3 id="orderServiceName">Напишите нам</h3>
+                    </div>
+                    <div class="modal-header-controls">
+                        <button class="modal-header-btn modal-close-btn" onclick="closeOrderModal()">×</button>
+                    </div>
+                </div>
+
+                <div class="service-modal-body">
+                    <div class="modal-description" style="margin-bottom: 1rem !important;">
+                        Оставьте заявку, и мы свяжемся с вами в течение часа
+                    </div>
+
+                    <div class="modal-features" style="display:none"></div>
+                </div>
+
+                <div class="service-modal-footer">
+                    <div class="modal-form-section">
+                        <form class="modal-order-form" onsubmit="submitSubserviceOrder(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Ваше имя *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Телефон *" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="company" placeholder="Название компании">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Дополнительная информация о проекте, особые требования..." rows="4"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary form-submit-btn">Отправить заявку</button>
+                                <button type="button" class="btn secondary modal-call-btn" onclick="window.open('tel:+7 (918) 45 44 600')">Позвонить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Секция цен -->
+        <section id="prices" class="section prices-section">
+            <div class="section-header" style="margin-top: -100px; position: relative; top: -50px;">
+                <h2 class="section-title">Акции</h2>
+                <p class="section-subtitle">Честное ценообразование без скрытых платежей</p>
+            </div>
+
+            <!-- Контейнер карусели с навигацией (только для мобильной версии) -->
+            <div class="prices-carousel-container" style="position: relative;">
+                <!-- Стрелочки навигации (скрыты на десктопе) -->
+                <button class="prices-nav-arrow prev" onclick="scrollPricesCarousel('prev')"
+                    style="display: none;">‹</button>
+                <button class="prices-nav-arrow next" onclick="scrollPricesCarousel('next')"
+                    style="display: none;">›</button>
+
+                <div id="pricing-grid" class="pricing-grid">
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Популярно</div>
+                        <div class="pricing-icon">♻️</div>
+                        <h3>Паспортизация отходов</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">15% </span>
+                            <span class="price-currency">Скидка</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>При заказе от 5 позиций и более</li>
+                        </ul>
+                        <button class="btn primary full-width" onclick="openOrderModal('Утилизация отходов', '2 000 ₽/т')">
+                            Заказать услугу
+                        </button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-icon">📋</div>
+                        <h3>Разработка проекта отходов (ПНООЛР)</h3>
+                        <div class="pricing-price">
+                        </div>
+                        <ul class="pricing-features">
+                            <li>При заключении договора на выполнение работ инвентаризация отходов в подарок</li>
+                        </ul>
+                        <button class="btn primary full-width" onclick="openOrderModal('Экологический аудит', '15 000 ₽')">
+                            Заказать услугу
+                        </button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-icon">🌬️</div>
+                        <h3>Инвентаризация выбросов + Проект НДВ</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">18%</span>
+                            <span class="price-currency">Скидка</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>При заключении договора на выполнение работ </li>
+                        </ul>
+                        <button class="btn primary full-width" onclick="openOrderModal('Консалтинг и обучение', '5 000 ₽')">
+                            Заказать услугу
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция О нас - Современная и интерактивная -->
+        <!-- Секция О нас - Современная и интерактивная -->
+        <section id="about" class="section about-section">
+            <!-- Заголовок секции -->
+            <div class="section-header">
+                <h2 class="section-title">О компании ПРОЭКО</h2>
+                <p class="section-subtitle">Создаем экологическое будущее вместе с Вами</p>
+            </div>
+
+            <!-- Наша команда -->
+            <div class="team-section">
+                <div class="team-header">
+                    <h3>Наша команда</h3>
+                    <p>Профессионалы, которые делают мир чище</p>
+                </div>
+
+                <!-- Генеральный директор -->
+                <div class="director-section">
+                    <div class="director-photo">
+                        <img src="images/gen_dir.jpg" alt="Черевко Марина Александровна- Генеральный директор"
+                            loading="lazy">
+                    </div>
+                    <div class="director-info">
+                        <h4>Черевко Марина Александровна</h4>
+                        <p class="director-position">Генеральный директор</p>
+                        <div class="director-message">
+                            <p><strong>Уважаемый клиент!</strong></p>
+                            <p>Компания «ПРОЭКО» — достаточно молодая, но несмотря на это, мы собрали команду
+                                квалифицированных специалистов.</p>
+                            <p>Мой личный опыт в данной сфере составляет около 20 лет. Изначально это было ведение
+                                предприятий, затем произошло более глубокое погружение в процесс проектной деятельности,
+                                а теперь в специализацию вошел и экологический аудит. Скажу, что наша работа постоянно
+                                держит нас в тонусе! Это связано, прежде всего, с постоянно меняющимся законодательством
+                                в природоохранной сфере.</p>
+                            <p><strong>Именно поэтому мы готовы взять решение этих забот на себя, а Вам дать возможность
+                                    заниматься любимым делом!</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Описание команды -->
+                <div class="team-description">
+                    <h4>Наша команда экспертов</h4>
+                    <p>В ПРОЭКО работают высококвалифицированные специалисты с многолетним опытом в области экологии.
+                        Каждый член нашей команды - это профессионал своего дела, который вносит уникальный вклад в
+                        развитие экологической отрасли.</p>
+                    <p>Мы объединены общей целью - создание устойчивого экологического будущего. Наша команда включает
+                        экологов, инженеров, консультантов.</p>
+                </div>
+
+                <!-- Карусель с фотографиями команды -->
+                <div class="team-carousel">
+                    <h4>Наши сотрудники</h4>
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="teamCarousel">
+                            <div class="carousel-slide">
+                                <img src="images/team/IMG_8920.jpg" alt="Команда ПРОЭКО" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/team/IMG_8921.jpg" alt="Команда ПРОЭКО" loading="lazy">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/team/IMG_8922.jpg" alt="Команда ПРОЭКО" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
+                        <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Наши ценности и миссия -->
+            <div class="values-section">
+                <div class="values-container">
+                    <div class="values-content">
+                        <div class="values-text">
+                            <div class="why-choose-us-section">
+                                <h3 class="why-choose-title">Почему выбирают нас</h3>
+                                <p class="why-choose-subtitle">Профессиональный подход и качественный результат</p>
+                            </div>
+
+                            <div class="services-list-horizontal">
+                                <div class="service-row">
+                                    <div class="service-icon-large">
+                                        🤝
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Индивидуальный подход к каждому клиенту</h4>
+                                    </div>
+                                </div>
+
+                                <div class="service-row">
+                                    <div class="service-icon-large">
+                                        ⚡
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Выполняем поставленные задачи в среднем на 30% быстрее, чем конкуренты</h4>
+                                    </div>
+                                </div>
+
+                                <div class="service-row">
+                                    <div class="service-icon-large">
+                                        🏛️
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Самостоятельно сдаем и получаем документы в государственных органах</h4>
+                                    </div>
+                                </div>
+
+                                <div class="service-row">
+                                    <div class="service-icon-large">
+                                        ⚖️
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Справедливая цена</h4>
+                                    </div>
+                                </div>
+
+                                <div class="service-row">
+                                    <div class="service-icon-large">
+                                        🔍
+                                    </div>
+                                    <div class="service-content">
+                                         <h4>Полностью прозрачный процесс</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-note">
+                            <ul class="why-choose-note-list">
+                                <li>Используем только современное сертифицированное программное обеспечение.</li>
+                                <li>Работаем только с проверенными аккредитованными лабораториями и обучающими центрами.</li>
+                                <li>Опыт специалистов в разработке и согласовании экологической документации более 15 лет.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Интерактивная секция достижений и медиа -->
+            <div class="media-achievements-section">
+                <div class="media-header">
+                    <h3>Наши достижения и медиа</h3>
+                </div>
+
+                <!-- Интерактивные вкладки -->
+                <div class="media-tabs">
+                    <button class="media-tab active" data-tab="webinars" onclick="switchMediaTab('webinars')">
+                        <span class="tab-icon">💻</span>
+                        <span>Вебинары</span>
+                    </button>
+                    <button class="media-tab" data-tab="publications" onclick="switchMediaTab('publications')">
+                        <span class="tab-icon">📰</span>
+                        <span>Публикации</span>
+                    </button>
+                </div>
+
+                <!-- Контент вкладок -->
+                <div class="media-content">
+                    <!-- Публикации -->
+                    <div class="media-panel" id="publications-panel">
+                        <div class="publications-grid">
+                            <div class="publication-card">
+                                <h4 class="publication-title">9 обязательных экологических документов для транспортной
+                                    компании</h4>
+                                <p class="publication-excerpt">Подборка ключевых документов, которые обязательны для
+                                    транспортных компаний.</p>
+                                <a href="https://cargonomica.com/eco-docs/?amp&amp&amp" target="_blank"
+                                    class="publication-link">Читать статью</a>
+                            </div>
+                            <div class="publication-card">
+                                <h4 class="publication-title">"Инвентаризация отходов: кому и зачем она нужна?"</h4>
+                                <p class="publication-excerpt">Подробный разбор процедуры инвентаризации отходов и её
+                                    значения для предприятий...</p>
+                                <a href="https://dzen.ru/proecology" target="_blank"
+                                    class="publication-link">Читать статью</a>
+                            </div>
+                            <div class="publication-card">
+                                <h4 class="publication-title">"Отчет по форме 2-ТП (воздух)"</h4>
+                                <p class="publication-excerpt">Руководство по заполнению и сдаче отчетности по выбросам
+                                    загрязняющих веществ в атмосферу...</p>
+                                <a href="https://dzen.ru/proecology" target="_blank"
+                                    class="publication-link">Читать статью</a>
+                            </div>
+                            <div class="publication-card">
+                                <h4 class="publication-title">"Обращение с отходами на предприятии. С чего начать?"</h4>
+                                <p class="publication-excerpt">Подробное руководство по организации системы обращения с
+                                    отходами на предприятии...</p>
+                                <a href="Обращение_с_отходами_на_предприятии_.pdf" target="_blank"
+                                    class="publication-link">Читать статью</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Вебинары -->
+                    <div class="media-panel active" id="webinars-panel">
+                        <div class="webinars-grid">
+                            <div class="webinar-card webinar-szz">
+                                <div class="webinar-header"></div>
+                                <div class="webinar-info">
+                                    <h4>Понятие «санитарно-защитная зона», кому необходимо разрабатывать и устанавливать
+                                        СЗЗ?</h4>
+                                    <button class="btn primary webinar-watch"
+                                        onclick="window.open('https://dzen.ru/video/watch/66f6604b95b87a0c55988ebd', '_blank')">Смотреть
+                                        запись</button>
+                                </div>
+                            </div>
+                            <div class="webinar-card webinar-nvos">
+                                <div class="webinar-header"></div>
+                                <div class="webinar-info">
+                                    <h4>Постановка на учет объектов НВОС. Проведение инвентаризации. Изменения в 2024
+                                        году</h4>
+                                    <button class="btn primary webinar-watch"
+                                        onclick="window.open('https://dzen.ru/video/watch/66cdd059a7f764086d90d192', '_blank')">Смотреть
+                                        запись</button>
+                                </div>
+                            </div>
+                            <div class="webinar-card webinar-waste">
+                                <div class="webinar-header"></div>
+                                <div class="webinar-info">
+                                    <h4>Обращение с отходами на предприятии: Основные правила</h4>
+                                    <p></p>
+                                    <p></p>
+                                    <button class="btn primary webinar-watch"
+                                        onclick="window.open('https://vkvideo.ru/video-208129092_456239098', '_blank')">Смотреть
+                                        запись</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Секция Контакты -->
+            <section id="contacts" class="section contacts-section">
+                <div class="section-header">
+                    <h2 class="section-title">Свяжитесь с нами</h2>
+                    <p class="section-subtitle">Мы всегда готовы помочь вам с экологическими вопросами</p>
+                </div>
+
+                <div class="contacts-container">
+                    <!-- Левая часть: Контактная информация и социальные сети -->
+                    <div class="contacts-info">
+                        <div class="contact-cards">
+                            <!-- Телефон -->
+                            <div class="contact-info-card">
+                                <div class="contact-info-header">
+                                    <div class="contact-info-icon">
+                                        <svg width="24" height="24" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h4>Телефон</h4>
+                                        <p>+7 (918) 454-46-00</p>
+                                    </div>
+                                </div>
+                                <button class="btn primary contact-action-btn"
+                                    onclick="window.location.href='tel:+7 (918) 45 44 600'">
+                                    <span>Позвонить</span>
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-info-card">
+                                <div class="contact-info-header">
+                                    <div class="contact-info-icon">
+                                        <svg width="24" height="24" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h4>Email</h4>
+                                        <p>proeco.kr@yandex.ru</p>
+                                    </div>
+                                </div>
+                                <button class="btn primary contact-action-btn"
+                                    onclick="window.location.href='mailto:proeco.kr@yandex.ru'">
+                                    <span>Написать</span>
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Адрес -->
+                            <div class="contact-info-card">
+                                <div class="contact-info-header">
+                                    <div class="contact-info-icon">
+                                        <svg width="24" height="24" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h4>Адрес</h4>
+                                        <p> г. Краснодар, ул. Можайского, д.55, оф.5</p>
+                                    </div>
+                                </div>
+                                <button class="btn primary contact-action-btn"
+                                    onclick="window.open('https://yandex.ru/maps/?text=Краснодар%20ул.%20Можайского%2055%20оф.5', '_blank')">
+                                    <span>Показать на карте</span>
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Социальные сети -->
+                        <div class="social-networks">
+                            <h3>Мы в социальных сетях</h3>
+                            <div class="social-grid">
+
+                                <a href="https://t.me/proeco2" class="social-card telegram-card" target="_blank">
+                                    <div class="social-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16l-1.58 7.44c-.12.539-.432.672-.864.42l-2.388-1.764-1.152 1.116c-.128.128-.236.236-.48.236l.168-2.388 4.332-3.912c.192-.168-.036-.264-.3-.096l-5.364 3.372-2.304-.72c-.504-.156-.516-.504.108-.744l8.988-3.456c.42-.156.792.096.636.744z" />
+                                        </svg>
+                                    </div>
+                                    <div class="social-content">
+                                        <h4>Telegram</h4>
+                                        <p>Быстрая связь</p>
+                                    </div>
+                                </a>
+
+                                <a href="https://zen.yandex.ru/proecology" class="social-card zen-card" target="_blank">
+                                    <div class="social-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-18C7.589 4 4 7.589 4 12s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z" />
+                                        </svg>
+                                    </div>
+                                    <div class="social-content">
+                                        <h4>Яндекс Дзен</h4>
+                                        <p>Статьи об экологии</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правая часть: Карта -->
+                    <div class="contacts-map" id="map">
+                        <div class="map-container">
+                            <div class="map-header">
+                                <h3>Наш офис</h3>
+                                <p>г. Краснодар, ул. Можайского, д.55, оф.5</p>
+                            </div>
+                            <div class="map-frame">
+                                <iframe
+                                    src="https://yandex.ru/map-widget/v1/?ll=38.976858%2C45.081198&z=16&pt=38.976858,45.081198,pm2rdm"
+                                    width="100%" height="300" frameborder="0" style="border-radius: 16px;">
+                                </iframe>
+                            </div>
+                            <div class="map-info">
+                                <div class="map-contact">
+                                    <div class="map-contact-item">
+                                        <span class="map-icon">🕒</span>
+                                        <span>Пн-Пт: 9:00-18:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Третья часть: Форма обратной связи -->
+                    <div class="contacts-form">
+                        <div class="contact-form-container">
+                            <div class="form-header">
+                                <h3>Напишите нам</h3>
+                                <p>Оставьте заявку, и мы свяжемся с вами в течение часа</p>
+                            </div>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="name">Ваше имя</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="phone" name="phone" required>
+                                    <label for="phone">Телефон</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="message" name="message" rows="3" required></textarea>
+                                    <label for="message">Ваше сообщение</label>
+                                </div>
+                                <button type="submit" class="btn primary form-submit-btn">
+                                    <span>Отправить заявку</span>
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer modern-footer">
+        <div class="footer-row">
+            <div class="footer-logo-block">
+                <img src="images/log.png" alt="ПРОЭКО" class="footer-logo-img">
+                <span class="footer-logo-text">ПРОЭКО</span>
+            </div>
+            <div class="footer-contacts-center">
+                <a href="tel:7 (918) 45 44 600" class="footer-mini-link">+7 (918) 454-46-00</a>
+                <a href="mailto:proeco.kr@yandex.ru" class="footer-mini-link">proeco.kr@yandex.ru</a>
+                <span class="footer-mini-address">г. Краснодар, ул. Можайского, д.55, оф.5</span>
+            </div>
+            <div class="footer-social-right">
+                <a href="https://t.me/proeco2" class="social-link" target="_blank" aria-label="Telegram">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16l-1.58 7.44c-.12.539-.432.672-.864.42l-2.388-1.764-1.152 1.116c-.128.128-.236.236-.48.236l.168-2.388 4.332-3.912c.192-.168-.036-.264-.3-.096l-5.364 3.372-2.304-.72c-.504-.156-.516-.504.108-.744l8.988-3.456c.42-.156.792.096.636.744z" />
+                    </svg>
+                </a>
+                <a href="https://zen.yandex.ru/proeco" class="social-link" target="_blank" aria-label="Яндекс Дзен">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" fill="#000" />
+                        <path d="M12 6a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8z" fill="#fff" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom-mini">
+            <span>&copy; 2024 ПРОЭКО</span>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка связи -->
+    <div class="floating-contact-btn" id="floatingContactBtn">
+        <div class="floating-btn-main">💬</div>
+        <div class="floating-contact-cards" id="floatingContactCards">
+            <div class="floating-contact-card" onclick="window.open('https://t.me/proeco2', '_blank')">
+                <div class="contact-card-icon telegram">T</div>
+                <div class="contact-card-content">
+                    <div class="contact-card-title">Телеграм</div>
+                    <div class="contact-card-subtitle">Быстрая связь</div>
+                </div>
+            </div>
+            <div class="floating-contact-card" onclick="window.location.href='tel:7 (918) 45 44 600'">
+                <div class="contact-card-icon phone">📞</div>
+                <div class="contact-card-content">
+                    <div class="contact-card-title">Телефон</div>
+                    <div class="contact-card-subtitle">+7 (918) 454-46-00</div>
+                </div>
+            </div>
+            <div class="floating-contact-card" onclick="scrollToSection('contacts')">
+                <div class="contact-card-icon form">📝</div>
+                <div class="contact-card-content">
+                    <div class="contact-card-title">Форма</div>
+                    <div class="contact-card-subtitle">Обратная связь</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            window.testServiceModal = function (serviceId) {
+                if (typeof openServiceModal === 'function') {
+                    openServiceModal(serviceId);
+                }
+            };
+        });
+
+        // ФУНКЦИЯ ПРОКРУТКИ КАРУСЕЛИ УСЛУГ С УПРАВЛЕНИЕМ СТРЕЛКАМИ (УЛУЧШЕННАЯ)
+        function scrollServicesCarousel(direction) {
+            const carousel = document.getElementById('services-grid');
+            if (!carousel) return;
+
+            const cardWidth = 280; // Ширина карточки
+            const gap = 24; // Расстояние между карточками (1.5rem = 24px)
+            const scrollDistance = cardWidth + gap;
+
+            if (direction === 'next') {
+                carousel.scrollBy({
+                    left: scrollDistance,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'prev') {
+                carousel.scrollBy({
+                    left: -scrollDistance,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Обновляем видимость стрелок после прокрутки с увеличенной задержкой
+            setTimeout(() => updateServicesArrowsFixed(), 500);
+        }
+
+        // ФУНКЦИЯ ОБНОВЛЕНИЯ ВИДИМОСТИ СТРЕЛОК УСЛУГ (УЛУЧШЕННАЯ ЛОГИКА)
+        function updateServicesArrowsFixed() {
+            const carousel = document.getElementById('services-grid');
+            const prevArrow = document.querySelector('.services-nav-arrow.prev');
+            const nextArrow = document.querySelector('.services-nav-arrow.next');
+
+            if (!carousel || !prevArrow || !nextArrow) return;
+
+            const scrollLeft = carousel.scrollLeft;
+            const cardWidth = 280;
+            const gap = 24;
+            const cardWithGap = cardWidth + gap;
+            const totalCards = carousel.children.length;
+
+            // Вычисляем текущую позицию карточки с учетом центрирования
+            const initialPadding = window.innerWidth <= 768 ? (window.innerWidth / 2 - 140) : 0;
+            const adjustedScrollLeft = scrollLeft + initialPadding;
+            const currentCardIndex = Math.round(adjustedScrollLeft / cardWithGap);
+
+            // Скрываем левую стрелку если на первой карточке (индекс 0)
+            if (currentCardIndex <= 0) {
+                prevArrow.classList.add('hidden');
+            } else {
+                prevArrow.classList.remove('hidden');
+            }
+
+            // Скрываем правую стрелку если на последней карточке
+            if (currentCardIndex >= totalCards - 1) {
+                nextArrow.classList.add('hidden');
+            } else {
+                nextArrow.classList.remove('hidden');
+            }
+        }
+
+        // ФУНКЦИЯ ПРОКРУТКИ КАРУСЕЛИ ЦЕН С УПРАВЛЕНИЕМ СТРЕЛКАМИ
+        function scrollPricesCarousel(direction) {
+            const carousel = document.getElementById('pricing-grid');
+            if (!carousel) return;
+
+            const cardWidth = 280; // Ширина карточки
+            const gap = 24; // Расстояние между карточками (1.5rem = 24px)
+            const scrollDistance = cardWidth + gap;
+
+            if (direction === 'next') {
+                carousel.scrollBy({
+                    left: scrollDistance,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'prev') {
+                carousel.scrollBy({
+                    left: -scrollDistance,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Обновляем видимость стрелок после прокрутки
+            setTimeout(() => updatePricesArrowsVisibility(), 300);
+        }
+
+        // ФУНКЦИЯ ОБНОВЛЕНИЯ ВИДИМОСТИ СТРЕЛОК ЦЕН
+        function updatePricesArrowsVisibility() {
+            const carousel = document.getElementById('pricing-grid');
+            const prevArrow = document.querySelector('.prices-nav-arrow.prev');
+            const nextArrow = document.querySelector('.prices-nav-arrow.next');
+
+            if (!carousel || !prevArrow || !nextArrow) return;
+
+            const scrollLeft = carousel.scrollLeft;
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+            // Скрываем левую стрелку если в начале
+            if (scrollLeft <= 10) {
+                prevArrow.classList.add('hidden');
+            } else {
+                prevArrow.classList.remove('hidden');
+            }
+
+            // Скрываем правую стрелку если в конце
+            if (scrollLeft >= maxScroll - 10) {
+                nextArrow.classList.add('hidden');
+            } else {
+                nextArrow.classList.remove('hidden');
+            }
+        }
+
+        // ИНИЦИАЛИЗАЦИЯ СТРЕЛОК ПРИ ЗАГРУЗКЕ
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                // Инициализируем видимость стрелок для услуг с улучшенной логикой
+                updateServicesArrowsFixed();
+
+                // Добавляем слушатель прокрутки для обновления стрелок услуг с debounce
+                const servicesCarousel = document.getElementById('services-grid');
+                if (servicesCarousel) {
+                    servicesCarousel.addEventListener('scroll', () => {
+                        clearTimeout(window.servicesScrollTimeout);
+                        window.servicesScrollTimeout = setTimeout(updateServicesArrowsFixed, 100);
+                    });
+                }
+
+                // Инициализируем видимость стрелок для цен
+                updatePricesArrowsVisibility();
+
+                // Добавляем слушатель прокрутки для обновления стрелок цен
+                const pricesCarousel = document.getElementById('pricing-grid');
+                if (pricesCarousel) {
+                    pricesCarousel.addEventListener('scroll', updatePricesArrowsVisibility);
+                }
+            }, 1500); // Увеличиваем задержку для надежности
+        });
+
+        // Загрузка секций
+        document.addEventListener('DOMContentLoaded', function () {
+            loadAllSections();
+            initFloatingButtonFooterInteraction();
+            // initMobileNavScroll удалена - используем новый код в конце файла
+            initMobileMenu();
+
+            // Принудительное применение стилей подвала
+            setTimeout(function () {
+                const footerContacts = document.querySelector('.footer-contacts-center');
+                const footerSocial = document.querySelector('.footer-social-right');
+                const footerRow = document.querySelector('.footer-row');
+
+                if (footerContacts) {
+                    footerContacts.style.display = 'flex';
+                    footerContacts.style.flexDirection = 'column';
+                    footerContacts.style.alignItems = 'center';
+                    footerContacts.style.gap = '0.5rem';
+                    footerContacts.style.flex = '1';
+                    footerContacts.style.justifyContent = 'center';
+                    footerContacts.style.textAlign = 'center';
+                    footerContacts.style.margin = '0 auto';
+                    footerContacts.style.padding = '0';
+                }
+
+                if (footerSocial) {
+                    footerSocial.style.display = 'flex';
+                    footerSocial.style.gap = '1rem';
+                    footerSocial.style.alignItems = 'center';
+                    footerSocial.style.flexShrink = '0';
+                    footerSocial.style.margin = '0';
+                    footerSocial.style.padding = '0';
+                }
+
+                if (footerRow) {
+                    footerRow.style.display = 'flex';
+                    footerRow.style.alignItems = 'center';
+                    footerRow.style.justifyContent = 'space-between';
+                    footerRow.style.padding = '1.5rem 2rem';
+                    footerRow.style.maxWidth = '1200px';
+                    footerRow.style.margin = '0 auto';
+                    footerRow.style.gap = '2rem';
+                    footerRow.style.flexWrap = 'wrap';
+                }
+            }, 100);
+        });
+
+        async function loadAllSections() {
+            try {
+                // Проверяем, есть ли контейнер для hero
+                const heroContainer = document.getElementById('hero-container');
+                if (heroContainer) {
+                    await loadSection('sections/hero.html', 'hero-container');
+                }
+
+
+
+                setTimeout(() => {
+                    // Проверяем существование функций перед вызовом
+                    if (typeof initNavigation === 'function') initNavigation();
+                    if (typeof initScrollProgress === 'function') initScrollProgress();
+                    if (typeof initScrollAnimations === 'function') initScrollAnimations();
+                    if (typeof initCounterAnimations === 'function') initCounterAnimations();
+                    if (typeof initMobileMenu === 'function') initMobileMenu();
+                    if (typeof initFloatingContactBtn === 'function') initFloatingContactBtn();
+
+                    const calendarBtn = document.getElementById('calendarBtn');
+                    if (calendarBtn) {
+                        calendarBtn.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            if (typeof openCalendarModal === 'function') {
+                                openCalendarModal();
+                            }
+                        });
+                    }
+                }, 300);
+
+            } catch (error) {
+                console.error('Ошибка загрузки секций:', error);
+            }
+        }
+
+        function loadSection(url, containerId) {
+            return fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Ошибка загрузки секции:', error);
+                    throw error;
+                });
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                if (typeof initCounterAnimations === 'function') {
+                    initCounterAnimations();
+                }
+            }, 1000); // задержка, чтобы секции точно подгрузились
+        });
+    </script>
+
+    <!-- Принудительные стили для подвала -->
+    <style>
+        /* Максимальный приоритет для подвала */
+        html body .modern-footer .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 0 !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(0) !important;
+            position: relative !important;
+            left: 0 !important;
+            flex: 1 !important;
+        }
+
+        html body .modern-footer .footer-social {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            transform: translateX(0) !important;
+            position: relative !important;
+            right: 0 !important;
+        }
+
+        /* Дополнительные стили для гарантии */
+        .footer-contacts-mini {
+            text-align: center !important;
+            margin-left: 0 !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transform: translateX(0) !important;
+            position: relative !important;
+            left: 0 !important;
+            flex: 1 !important;
+        }
+
+        .footer-social {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            transform: translateX(0) !important;
+            position: relative !important;
+            right: 0 !important;
+        }
+
+        /* ===== СКРЫТИЕ ОПИСАНИЯ В МОДАЛЬНЫХ ОКНАХ ===== */
+        /* Полностью скрываем описание услуг */
+        html body .modal-description,
+        html body .service-modal .modal-description,
+        html body .service-modal-body .modal-description,
+        .modal-description {
+            display: none !important;
+        }
+
+        html body .subservices-grid,
+        html body .service-modal .subservices-grid,
+        html body .service-modal-body .subservices-grid,
+        .subservices-grid {
+            margin: 0 !important;
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Убираем отступы у всех элементов в теле модального окна */
+        html body .service-modal-body>*,
+        .service-modal-body>* {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Компактные отступы для тела модального окна */
+        html body .service-modal-body,
+        .service-modal-body {
+            padding: 10px 20px !important;
+        }
+
+        /* ПРИНУДИТЕЛЬНЫЕ СТИЛИ ДЛЯ ПОДВАЛА */
+        .footer-contacts-center {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            flex: 1 !important;
+            justify-content: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+        }
+
+        .footer-social-right {
+            display: flex !important;
+            gap: 1rem !important;
+            align-items: center !important;
+            flex-shrink: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .footer-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 1.5rem 2rem !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            gap: 2rem !important;
+            flex-wrap: wrap !important;
+        }
+
+        @media (min-width: 1201px) {
+            .modern-nav .hero-actions {
+                justify-content: flex-start !important;
+                margin-left: -2rem !important;
+            }
+        }
+    </style>
+    <script>
+        // ПРАВИЛЬНАЯ ЛОГИКА ДЛЯ МОБИЛЬНОГО МЕНЮ И НАВИГАЦИИ
+        document.addEventListener('DOMContentLoaded', function () {
+            let lastScrollTop = 0;
+            const nav = document.querySelector('.modern-nav');
+
+            if (nav) {
+                window.addEventListener('scroll', function () {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    // ПРОВЕРЯЕМ РАЗМЕР ЭКРАНА - СКРЫТИЕ ТОЛЬКО НА МОБИЛЬНЫХ
+                    if (window.innerWidth <= 1200) {
+                        // МОБИЛЬНАЯ ВЕРСИЯ - скрываем/показываем навигацию
+                        if (scrollTop > lastScrollTop && scrollTop > 100) {
+                            // Скролл вниз - скрываем навигацию
+                            nav.classList.add('nav-hidden');
+
+                            if (typeof closeMobileMenu === 'function') closeMobileMenu();
+                        } else {
+                            // Скролл вверх - показываем навигацию
+                            nav.classList.remove('nav-hidden');
+                        }
+                    } else {
+                        // ДЕСКТОПНАЯ ВЕРСИЯ - навигация всегда видна
+                        nav.classList.remove('nav-hidden');
+
+                    }
+
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                });
+            }
+        });
+    </script>
+    <script src="modal-spacing-fix.js"></script>
+    <script src="mobile-navigation-fix.js"></script>
+    <script src="calendar-fix-aggressive.js"></script>
+    <script>
+        (function () {
+            function initTeamHeaderMobileScroll() {
+                if (window.innerWidth > 768) return;
+                var header = document.querySelector('.team-header');
+                if (!header) return;
+
+                header.classList.add('scroll-active');
+
+                var ticking = false;
+
+                function update() {
+                    var rect = header.getBoundingClientRect();
+                    var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                    // Увеличиваем зону прокрутки в 2.5 раза для более медленного эффекта
+                    var total = (windowHeight + rect.height) * 2.5;
+                    var progress = (windowHeight - rect.top) / total;
+
+                    // Добавляем плавное замедление в начале и конце
+                    if (progress < 0) progress = 0;
+                    if (progress > 1) progress = 1;
+
+                    // Применяем easing функцию для более плавного перехода
+                    progress = progress * progress * (3 - 2 * progress); // smoothstep функция
+
+                    var offset = 100 - Math.round(progress * 100);
+                    header.style.setProperty('--scroll-offset', offset + '%');
+                    ticking = false;
+                }
+
+                function onScroll() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(update);
+                        ticking = true;
+                    }
+                }
+
+                update();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth <= 768) {
+                        update();
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', initTeamHeaderMobileScroll);
+        })();
+    </script>
+    <style>
+        /* Гарантированно показывать только активную панель вкладок */
+        .media-panel {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .18s ease-in-out;
+        }
+
+        .media-panel.active {
+            display: block !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        /* Убедиться, что сетки внутри панелей отображаются корректно */
+        .publications-grid,
+        .webinars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        /* На всякий случай — явно показываем карточки */
+        .publication-card,
+        .webinar-card {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+</body>
+
+</html>

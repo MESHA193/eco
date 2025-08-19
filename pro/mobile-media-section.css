@@ -1,0 +1,251 @@
+/* ===== МОБИЛЬНЫЕ СТИЛИ ДЛЯ СЕКЦИИ "НАШИ ДОСТИЖЕНИЯ И МЕДИА" ===== */
+
+@media (max-width: 768px) {
+  /* Основная секция медиа */
+  .media-achievements-section {
+    padding: 2rem 1rem !important;
+    margin: 2rem 0 !important;
+  }
+  
+  /* Заголовок секции */
+  .media-header {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .media-header h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .media-header p {
+    font-size: 1rem !important;
+    color: #6b7280 !important;
+  }
+  
+  /* Вкладки медиа */
+  .media-tabs {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .media-tab {
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Сетка вебинаров - одна колонка на мобильных */
+  .webinars-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Карточки вебинаров */
+  .webinar-card {
+    background: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(229, 231, 235, 0.8) !important;
+  }
+  
+  .webinar-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+  }
+  
+  /* Превью вебинара */
+  .webinar-preview {
+    position: relative !important;
+    height: 200px !important;
+    overflow: hidden !important;
+  }
+  
+  .webinar-preview img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  .webinar-card:hover .webinar-preview img {
+    transform: scale(1.05) !important;
+  }
+  
+  /* Статус вебинара */
+  .webinar-status {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: white !important;
+    z-index: 10 !important;
+  }
+  
+  .webinar-status.upcoming {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+  }
+  
+  .webinar-status.completed {
+    background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+  }
+  
+  /* Информация о вебинаре */
+  .webinar-info {
+    padding: 1.5rem !important;
+  }
+  
+  .webinar-info h4 {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .webinar-description {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Детали вебинара */
+  .webinar-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .webinar-date,
+  .webinar-duration,
+  .webinar-participants {
+    font-size: 0.85rem !important;
+    color: #4b5563 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+  
+  .webinar-date::before {
+    content: '📅' !important;
+    font-size: 1rem !important;
+  }
+  
+  .webinar-duration::before {
+    content: '⏱️' !important;
+    font-size: 1rem !important;
+  }
+  
+  .webinar-participants::before {
+    content: '👥' !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Кнопки вебинаров */
+  .webinar-register,
+  .webinar-watch {
+    width: 100% !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+  
+  .webinar-register {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+  }
+  
+  .webinar-register:hover {
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3) !important;
+  }
+  
+  .webinar-watch {
+    background: white !important;
+    color: #10b981 !important;
+    border: 2px solid #10b981 !important;
+  }
+  
+  .webinar-watch:hover {
+    background: #10b981 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3) !important;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .media-achievements-section {
+    padding: 1.5rem 0.5rem !important;
+  }
+  
+  .webinar-preview {
+    height: 180px !important;
+  }
+  
+  .webinar-info {
+    padding: 1.2rem !important;
+  }
+  
+  .webinar-info h4 {
+    font-size: 1.1rem !important;
+  }
+  
+  .webinar-description {
+    font-size: 0.85rem !important;
+  }
+  
+  .media-tab {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Анимации появления */
+@media (max-width: 768px) {
+  .webinar-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: webinarAppear 0.6s ease forwards;
+  }
+  
+  .webinar-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .webinar-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes webinarAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

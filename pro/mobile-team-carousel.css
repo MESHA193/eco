@@ -1,0 +1,240 @@
+/* ===== МОБИЛЬНАЯ КАРУСЕЛЬ ДЛЯ СЕКЦИИ КОМАНДЫ ===== */
+
+@media (max-width: 768px) {
+  /* Уменьшаем расстояние между заголовком секции и блоком команды */
+  .about-section .section-header {
+    margin-bottom: 1rem !important;
+  }
+  
+  .about-section .team-section {
+    margin-top: 0 !important;
+  }
+  
+  /* Контейнер карусели команды */
+  .team-carousel {
+    margin: 2rem 0 !important;
+    padding: 0 1rem !important;
+  }
+  
+  .team-carousel h4 {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.3rem !important;
+    color: #1f2937 !important;
+  }
+  
+  /* Основной контейнер карусели */
+  .carousel-container {
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Трек карусели - горизонтальная прокрутка */
+  .carousel-track {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+  }
+  
+  /* Скрываем скроллбар в WebKit браузерах */
+  .carousel-track::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Слайды карусели */
+  .carousel-slide {
+    flex: 0 0 100% !important; /* Каждый слайд занимает всю ширину */
+    min-width: 100% !important;
+    scroll-snap-align: start !important;
+    position: relative !important;
+    height: 300px !important; /* Фиксированная высота */
+    overflow: hidden !important;
+  }
+  
+  /* Изображения в слайдах */
+  .carousel-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0 !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  /* Кнопки навигации карусели */
+  .carousel-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    color: #10b981 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    z-index: 10 !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .carousel-btn:hover {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border-color: rgba(16, 185, 129, 0.5) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2) !important;
+  }
+  
+  /* Позиционирование кнопок */
+  .carousel-btn.prev {
+    left: 15px !important;
+  }
+  
+  .carousel-btn.next {
+    right: 15px !important;
+  }
+  
+
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .carousel-slide {
+    height: 250px !important; /* Уменьшаем высоту */
+  }
+  
+  .carousel-btn {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px !important;
+  }
+  
+  .carousel-btn.next {
+    right: 10px !important;
+  }
+  
+  .team-carousel {
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* Анимации для карусели */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-slide {
+  animation: slideIn 0.5s ease-out !important;
+}
+
+/* Hover эффект для изображений */
+@media (max-width: 768px) {
+  .carousel-slide:hover img {
+    transform: scale(1.05) !important;
+  }
+}
+
+/* ===== МОБИЛЬНАЯ ПРОКРУТКА ФОНА ДЛЯ СЕКЦИИ "НАША КОМАНДА" ===== */
+
+@media (max-width: 768px) {
+  /* Мобильная прокрутка фона для заголовка команды */
+  .team-header {
+    position: relative !important;
+    background-image: url('images/photo_2025-07-23_12-46-42.jpg') !important;
+    background-size: 120% auto !important;
+    background-position: center bottom !important; /* Начинаем с нижней части */
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    padding: 4rem 1rem !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    transform: translateZ(0) !important; /* Включаем аппаратное ускорение */
+  }
+  
+  /* Темный оверлей для лучшей читаемости текста */
+  .team-header::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1 !important;
+  }
+  
+  /* Текст поверх фона */
+  .team-header h3,
+  .team-header p {
+    position: relative !important;
+    z-index: 2 !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  .team-header h3 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+  
+  .team-header p {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+  
+  /* Эффект прокрутки фона, начиная с нижней части */
+  .team-header.scroll-active {
+    background-position: center var(--scroll-offset, 100%) !important;
+    transition: background-position 0.05s linear !important;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .team-header {
+    padding: 3rem 1rem !important;
+    background-size: 140% auto !important;
+  }
+  
+  .team-header h3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .team-header p {
+    font-size: 1rem !important;
+  }
+}

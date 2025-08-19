@@ -1,0 +1,92 @@
+/* ===== КОНТАКТЫ В НАВИГАЦИИ - СТИЛЬ КАК У ОСНОВНЫХ КНОПОК ===== */
+.modern-nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.modern-nav .nav-contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-contact-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 16px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important;
+  color: #6b7280 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.nav-contact-btn::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: -1 !important;
+  border-radius: 12px !important;
+}
+
+.nav-contact-btn:hover::before {
+  opacity: 0.1 !important;
+}
+
+.nav-contact-btn:hover {
+  color: #059669 !important;
+  transform: translateY(-2px) !important;
+}
+
+.nav-contact-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+.nav-contact-btn span {
+  white-space: nowrap !important;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #059669;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .nav-contact {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+}

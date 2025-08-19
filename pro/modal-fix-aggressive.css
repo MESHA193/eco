@@ -1,0 +1,115 @@
+/* ===== АГРЕССИВНОЕ ИСПРАВЛЕНИЕ РАССТОЯНИЙ В МОДАЛЬНЫХ ОКНАХ ===== */
+
+/* Полностью скрываем описание услуг */
+.modal-description,
+.service-modal .modal-description,
+.service-modal-body .modal-description,
+[class*="modal"] [class*="description"],
+div[class*="description"] {
+    display: none !important;
+}
+
+/* Убираем отступы у сетки подуслуг */
+.subservices-grid,
+.service-modal .subservices-grid,
+.service-modal-body .subservices-grid,
+[class*="subservices"],
+[class*="grid"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Убираем отступы у всех элементов в теле модального окна */
+.service-modal-body > * {
+    margin-top: 0 !important;
+}
+
+.service-modal-body > *:not(:last-child) {
+    margin-bottom: 8px !important;
+}
+
+/* Специфичные стили для подуслуг */
+.subservice-button,
+.subservice-btn {
+    margin-top: 0 !important;
+}
+
+/* Убираем отступы у заголовков в модальном окне */
+.service-modal-body h4,
+.modal-features h4 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Компактные отступы для списков */
+.modal-features ul {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Максимально агрессивные стили */
+html body .service-modal .service-modal-body .modal-description {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+html body .service-modal .service-modal-body .subservices-grid {
+    margin: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .service-modal-body {
+        padding: 10px 20px !important;
+    }
+    
+    .modal-description {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .subservices-grid {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+/* Скрываем элементы с фоном (обычно это описание) */
+.service-modal [style*="background: #f8fafc"],
+.service-modal [style*="border-left: 4px solid #10b981"],
+.service-modal [style*="padding: 16px"],
+.service-modal [style*="border-radius: 12px"] {
+    display: none !important;
+}
+
+/* Скрываем первый div в теле модального окна (обычно описание) */
+.service-modal-body > div:first-child {
+    display: none !important;
+}
+
+/* Скрываем параграфы в модальных окнах */
+.service-modal p,
+.service-modal-body p {
+    display: none !important;
+}
+
+/* Скрываем элементы с определенными стилями текста */
+.service-modal [style*="color: #4b5563"],
+.service-modal [style*="line-height: 1.6"] {
+    display: none !important;
+}
+
+/* Показываем только сетки подуслуг */
+.subservices-grid,
+.service-modal .subservices-grid,
+.service-modal-body .subservices-grid {
+    display: grid !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Убираем отступы у тела модального окна */
+.service-modal-body {
+    padding-top: 10px !important;
+}

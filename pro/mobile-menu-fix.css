@@ -1,0 +1,91 @@
+/* ИСПРАВЛЕНИЕ МОБИЛЬНОГО МЕНЮ - ТОЧНЫЕ СТИЛИ КАК У КНОПОК НАВИГАЦИИ */
+
+@media (max-width: 1200px) {
+
+  /* Мобильное меню - прозрачное и примыкает к шапке */
+  .mobile-menu {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    padding: 0 1rem 1.5rem 1rem !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+    margin: 0 !important;
+
+    /* Скрыто по умолчанию */
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Показываем меню когда открыто */
+  .mobile-menu.open {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Контейнер для кнопок меню */
+  .mobile-menu-items {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem 0 0 0 !important;
+  }
+
+  /* Кнопки мобильного меню - ТОЧНАЯ КОПИЯ .btn.primary */
+  .mobile-menu-item {
+    /* Базовые стили .btn */
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.875rem 1.5rem !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+
+    /* Стили .btn.primary - салатовые цвета как в полноразмерной версии */
+    background: linear-gradient(135deg, #a8ff78, #78ffd6) !important;
+    color: #166534 !important;
+    border: 2px solid #a8ff78 !important;
+    box-shadow: 0 2px 16px #a8ff7899 !important;
+
+    /* Адаптация для мобильного меню */
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  /* Эффект при наведении - ТОЧНАЯ КОПИЯ .btn.primary:hover с салатовыми цветами */
+  .mobile-menu-item:hover {
+    background: linear-gradient(135deg, #78ffd6, #a8ff78) !important;
+    color: #166534 !important;
+    border-color: #78ffd6 !important;
+    box-shadow: 0 4px 32px #a8ff7855, 0 8px 25px #78ffd655 !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    text-decoration: none !important;
+  }
+
+  /* Убираем все старые стили */
+  .mobile-menu-item::before {
+    display: none !important;
+  }
+}
