@@ -1,0 +1,166 @@
+/* ===== МОБИЛЬНАЯ СЕТКА ДЛЯ КАРТОЧЕК УСЛУГ В СЕКЦИИ "О НАС" ===== */
+
+@media (max-width: 768px) {
+  /* Сетка 3 ряда по 2 карточки */
+  .services-grid-6 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 колонки */
+    grid-template-rows: repeat(3, 1fr) !important; /* 3 ряда */
+    gap: 1rem !important;
+    padding: 1rem 0.5rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Карточки услуг с увеличенным размером для 2 колонок */
+  .services-grid-6 .service-item {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 1.2rem 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(229, 231, 235, 0.8) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 160px !important;
+  }
+  
+  /* Hover эффект для карточек */
+  .services-grid-6 .service-item:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+  }
+  
+  /* Увеличенные иконки для 2 колонок */
+  .services-grid-6 .service-icon {
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0 auto 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-radius: 12px !important;
+    color: white !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .services-grid-6 .service-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  /* Увеличенные заголовки */
+  .services-grid-6 .service-item h4 {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Увеличенный текст описания */
+  .services-grid-6 .service-item p {
+    font-size: 0.8rem !important;
+    color: #6b7280 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    flex-grow: 1 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  
+  /* Анимация появления карточек */
+  .services-grid-6 .service-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardAppear 0.6s ease forwards;
+  }
+  
+  .services-grid-6 .service-item:nth-child(1) { animation-delay: 0.1s; }
+  .services-grid-6 .service-item:nth-child(2) { animation-delay: 0.2s; }
+  .services-grid-6 .service-item:nth-child(3) { animation-delay: 0.3s; }
+  .services-grid-6 .service-item:nth-child(4) { animation-delay: 0.4s; }
+  .services-grid-6 .service-item:nth-child(5) { animation-delay: 0.5s; }
+  .services-grid-6 .service-item:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .services-grid-6 {
+    gap: 0.6rem !important;
+    padding: 0.8rem 0.3rem !important;
+  }
+  
+  .services-grid-6 .service-item {
+    padding: 0.8rem 0.6rem !important;
+    min-height: 130px !important;
+  }
+  
+  .services-grid-6 .service-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .services-grid-6 .service-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  .services-grid-6 .service-item h4 {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .services-grid-6 .service-item p {
+    font-size: 0.65rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
+}
+
+/* Дополнительные эффекты */
+@media (max-width: 768px) {
+  /* Эффект при прокрутке */
+  .values-section.visible .services-grid-6 .service-item {
+    animation: cardAppear 0.6s ease forwards;
+  }
+  
+  /* Градиентная граница при наведении */
+  .services-grid-6 .service-item:hover {
+    background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  }
+  
+  /* Пульсирующий эффект для иконок */
+  .services-grid-6 .service-item:hover .service-icon {
+    animation: iconPulse 0.6s ease;
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

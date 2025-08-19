@@ -1,0 +1,36 @@
+/* ===== ЭКСТРЕННОЕ ИСПРАВЛЕНИЕ КРЕСТИКА - ПОДКЛЮЧАТЬ ПОСЛЕДНИМ ===== */
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+  /* Максимально агрессивные стили для крестика */
+  .modal-close {
+    top: -15px !important;
+    position: absolute !important;
+    right: 15px !important;
+    z-index: 999999 !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ef4444 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    cursor: pointer !important;
+  }
+}
+
+/* Для всех устройств - дублируем на всякий случай */
+.modal-close {
+  top: -15px !important;
+  position: absolute !important;
+  right: 15px !important;
+  z-index: 999999 !important;
+}

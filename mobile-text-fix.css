@@ -1,0 +1,353 @@
+/* ===== ПРИНУДИТЕЛЬНЫЕ СТИЛИ ДЛЯ ТЕКСТА И КАРТОЧЕК НА МОБИЛЬНЫХ ===== */
+
+/* МАКСИМАЛЬНО ПРИНУДИТЕЛЬНЫЕ СТИЛИ */
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+    /* Главный заголовок - ПРИНУДИТЕЛЬНО белый, максимально влево */
+    html body .hero-title,
+    html body h1.hero-title,
+    html body .hero-content .hero-title,
+    html body section .hero-title,
+    html body .hero-section .hero-title {
+        font-size: 1.8rem !important; /* УВЕЛИЧЕН ШРИФТ */
+        font-weight: 700 !important; /* УВЕЛИЧЕН ВЕС */
+        line-height: 1.2 !important;
+        margin: 0.1rem 0 0.4rem 0 !important;
+        text-align: left !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        padding: 0 0 0 1rem !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        max-width: 100% !important;
+        word-spacing: normal !important;
+        color: white !important; /* БЕЛЫЙ */
+        position: relative !important;
+        left: 0 !important; /* ВЛЕВО */
+        top: 0 !important;
+    }
+
+    /* Подзаголовок - ПРИНУДИТЕЛЬНО белый, максимально влево */
+    html body .hero-subtitle,
+    html body p.hero-subtitle,
+    html body .hero-content .hero-subtitle,
+    html body section .hero-subtitle,
+    html body .hero-section .hero-subtitle {
+        font-size: 1rem !important; /* УВЕЛИЧЕН ШРИФТ */
+        font-weight: 500 !important; /* УВЕЛИЧЕН ВЕС */
+        line-height: 1.3 !important;
+        margin: 0 0 0.6rem 0 !important;
+        text-align: left !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        padding: 0 0 0 1rem !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        max-width: 100% !important;
+        word-spacing: normal !important;
+        color: white !important; /* БЕЛЫЙ */
+        position: relative !important;
+        left: 0 !important; /* ВЛЕВО */
+        top: 0 !important;
+    }
+
+    /* Градиентный текст - ПРИНУДИТЕЛЬНО белый */
+    html body .gradient-text,
+    html body span.gradient-text,
+    html body .hero-title .gradient-text {
+        color: white !important;
+        background: none !important;
+        background-image: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: unset !important;
+    }
+
+    /* Карточки статистики - ПРИНУДИТЕЛЬНО опускаем еще ниже */
+    html body .hero-stats,
+    html body div.hero-stats,
+    html body .hero-content .hero-stats,
+    html body section .hero-stats {
+        margin-top: 6rem !important; /* ЕЩЕ БОЛЬШЕ ОПУСКАЕМ */
+        margin-bottom: 2rem !important;
+        position: relative !important;
+        top: 4rem !important; /* ЕЩЕ БОЛЬШЕ ВНИЗ */
+    }
+
+    /* Контейнер героя - убираем лишние отступы */
+    html body .hero-content,
+    html body div.hero-content,
+    html body section .hero-content {
+        padding-top: 1rem !important; /* МИНИМАЛЬНЫЙ ОТСТУП СВЕРХУ */
+        text-align: left !important;
+    }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    html body .hero-title {
+        font-size: 1.5rem !important; /* УВЕЛИЧЕН ШРИФТ */
+        font-weight: 700 !important;
+        margin: 0.3rem 0 0.6rem 0 !important;
+        padding: 0 0 0 1rem !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        text-align: left !important; /* ВЛЕВО */
+    }
+
+    html body .hero-subtitle {
+        font-size: 0.9rem !important; /* УВЕЛИЧЕН ШРИФТ */
+        font-weight: 500 !important;
+        margin: 0 0 0.8rem 0 !important;
+        padding: 0 0 0 1rem !important; /* МАКСИМАЛЬНО ВЛЕВО */
+        text-align: left !important; /* ВЛЕВО */
+    }
+
+    html body .hero-stats {
+        margin-top: 3rem !important;
+        top: 1.5rem !important;
+    }
+}/* ====
+= ПОЛУПРОЗРАЧНАЯ ШАПКА ДЛЯ МОБИЛЬНОЙ ВЕРСИИ ===== */
+
+@media (max-width: 768px) {
+    /* ПОЛУПРОЗРАЧНАЯ ТЕМНАЯ ШАПКА */
+    html body .modern-nav,
+    html body nav.modern-nav,
+    html body .modern-nav.nav-visible,
+    html body .modern-nav.nav-hidden {
+        background: rgba(0, 0, 0, 0.25) !important; /* ПОЛУПРОЗРАЧНАЯ ТЕМНАЯ */
+        backdrop-filter: blur(15px) !important; /* РАЗМЫТИЕ */
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Элементы в шапке остаются белыми и видимыми */
+    html body .modern-nav .nav-title,
+    html body .modern-nav .nav-brand,
+    html body .modern-nav * {
+        color: white !important;
+    }
+
+    /* Кнопки в шапке остаются зелеными но полупрозрачными */
+    html body .modern-nav .btn.primary {
+        background: rgba(16, 185, 129, 0.9) !important;
+        backdrop-filter: blur(5px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Логотип остается видимым */
+    html body .modern-nav .nav-logo {
+        opacity: 1 !important;
+    }
+
+    /* Гамбургер меню остается белым */
+    html body .modern-nav .nav-toggle span {
+        background: white !important;
+    }
+}/* ====
+= ШАПКА ПОВЕРХ ФОТОГРАФИИ НА ГЛАВНОЙ ===== */
+
+@media (max-width: 768px) {
+    /* ШАПКА КАК ЧАСТЬ ГЛАВНОЙ СЕКЦИИ НА ФОТОГРАФИИ */
+    html body .modern-nav,
+    html body nav.modern-nav,
+    html body .modern-nav.nav-visible,
+    html body .modern-nav.nav-hidden {
+        position: fixed !important; /* ВОЗВРАЩАЕМ FIXED ДЛЯ ПРАВИЛЬНОЙ АНИМАЦИИ */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important; /* ВЫСОКИЙ Z-INDEX ДЛЯ НАВИГАЦИИ */
+        transform: translateZ(0) !important;
+        will-change: transform, opacity !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Главная секция начинается с самого верха БЕЗ ОТСТУПОВ */
+    html body .hero-section,
+    html body section.hero-section,
+    html body #home {
+        position: relative !important;
+        z-index: 1 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important; /* БЕЗ ОТСТУПА - ФОТО С САМОГО ВЕРХА */
+        min-height: 100vh !important; /* НА ВСЮ ВЫСОТУ ЭКРАНА */
+    }
+
+    /* Основной контент БЕЗ отступа под шапку */
+    html body main,
+    html body .main-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important; /* БЕЗ ОТСТУПА */
+    }
+
+    /* Текст поверх фото но под шапкой */
+    html body .hero-title,
+    html body .hero-subtitle {
+        z-index: 10 !important; /* ПОВЕРХ ФОТО НО ПОД ШАПКОЙ */
+    }
+
+    /* Карточки статистики поверх фото но под шапкой */
+    html body .hero-stats {
+        z-index: 10 !important; /* ПОВЕРХ ФОТО НО ПОД ШАПКОЙ */
+    }
+
+    /* Все элементы шапки имеют высокий z-index */
+    html body .modern-nav * {
+        z-index: inherit !important;
+        position: relative !important;
+    }
+
+    /* Мобильное меню тоже поверх всего */
+    html body .mobile-menu {
+        z-index: 99998 !important; /* ЧУТЬ НИЖЕ ШАПКИ */
+        position: fixed !important;
+    }
+}/* =
+==== МАКСИМАЛЬНО ПРИНУДИТЕЛЬНАЯ ПРОЗРАЧНОСТЬ ШАПКИ ===== */
+
+@media (max-width: 768px) {
+    /* ПРИНУДИТЕЛЬНАЯ ПРОЗРАЧНОСТЬ С МАКСИМАЛЬНЫМ ПРИОРИТЕТОМ */
+    html body .modern-nav,
+    html body nav.modern-nav,
+    html body .modern-nav.nav-visible,
+    html body .modern-nav.nav-hidden,
+    html body header.modern-nav,
+    html body .modern-nav.nav-transparent {
+        background: rgba(0, 0, 0, 0.05) !important; /* МАКСИМАЛЬНАЯ ПРОЗРАЧНОСТЬ */
+        background-color: rgba(0, 0, 0, 0.05) !important;
+        background-image: none !important;
+        backdrop-filter: blur(5px) !important; /* МИНИМАЛЬНОЕ РАЗМЫТИЕ */
+        -webkit-backdrop-filter: blur(5px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important; /* ПОЧТИ НЕВИДИМАЯ ГРАНИЦА */
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05) !important; /* МИНИМАЛЬНАЯ ТЕНЬ */
+        opacity: 0.95 !important; /* ДОПОЛНИТЕЛЬНАЯ ПРОЗРАЧНОСТЬ */
+    }
+
+    /* Убираем любые непрозрачные фоны */
+    html body .modern-nav::before,
+    html body .modern-nav::after {
+        background: transparent !important;
+        display: none !important;
+    }
+
+    /* Элементы шапки остаются контрастными */
+    html body .modern-nav .nav-title,
+    html body .modern-nav .nav-brand {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important; /* ТЕНЬ ДЛЯ ЧИТАЕМОСТИ */
+    }
+
+    /* Кнопки остаются видимыми */
+    html body .modern-nav .btn.primary {
+        background: rgba(16, 185, 129, 0.8) !important; /* ПОЛУПРОЗРАЧНЫЕ ЗЕЛЕНЫЕ */
+        backdrop-filter: blur(3px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Гамбургер меню с тенью для видимости */
+    html body .modern-nav .nav-toggle span {
+        background: white !important;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+    }
+}/* ===== П
+ЛАВНЫЕ АНИМАЦИИ ШАПКИ ПРИ СКРОЛЛЕ ===== */
+
+@media (max-width: 768px) {
+    /* ПЛАВНЫЕ ПЕРЕХОДЫ ДЛЯ ШАПКИ */
+    html body .modern-nav,
+    html body nav.modern-nav {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; /* ПЛАВНЫЙ ПЕРЕХОД */
+        transform-origin: top center !important;
+        will-change: transform, opacity !important;
+    }
+
+    /* ШАПКА ПОЯВЛЯЕТСЯ ПРИ СКРОЛЛЕ ВВЕРХ */
+    html body .modern-nav.nav-visible,
+    html body nav.modern-nav.nav-visible,
+    html body .modern-nav:not(.nav-hidden) {
+        transform: translateY(0) !important; /* ВИДИМАЯ ПОЗИЦИЯ */
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* ШАПКА ИСЧЕЗАЕТ ПРИ СКРОЛЛЕ ВНИЗ */
+    html body .modern-nav.nav-hidden,
+    html body nav.modern-nav.nav-hidden {
+        transform: translateY(-100%) !important; /* СКРЫТАЯ ПОЗИЦИЯ - УХОДИТ ВВЕРХ */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important; /* ОТКЛЮЧАЕМ ВЗАИМОДЕЙСТВИЕ */
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Дополнительные плавные переходы для элементов шапки */
+    html body .modern-nav * {
+        transition: all 0.3s ease !important;
+    }
+
+    /* Плавные переходы для кнопок */
+    html body .modern-nav .btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Плавные переходы для гамбургера */
+    html body .modern-nav .nav-toggle span {
+        transition: all 0.3s ease !important;
+    }
+
+    /* Убираем резкие переходы при изменении состояния */
+    html body .modern-nav:not(.nav-hidden):not(.nav-visible) {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Инициализация шапки в видимом состоянии */
+    html body .modern-nav {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Плавное появление при загрузке страницы */
+    html body .modern-nav.loaded {
+        animation: slideInFromTop 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    /* Анимация появления сверху */
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Анимация исчезновения вверх */
+    @keyframes slideOutToTop {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* Применение анимации исчезновения */
+    html body .modern-nav.hiding {
+        animation: slideOutToTop 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+    }
+
+    /* Применение анимации появления */
+    html body .modern-nav.showing {
+        animation: slideInFromTop 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+    }
+}

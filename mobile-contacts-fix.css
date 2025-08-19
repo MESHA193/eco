@@ -1,0 +1,459 @@
+/* ===== МОБИЛЬНЫЕ СТИЛИ ДЛЯ СЕКЦИИ КОНТАКТОВ ===== */
+
+@media (max-width: 768px) {
+
+  /* Основная секция контактов */
+  .contacts-section {
+    padding: 2rem 1rem !important;
+    overflow: hidden !important;
+  }
+
+  /* Контейнер контактов - вертикальная компоновка */
+  .contacts-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Информация о контактах */
+  .contacts-info {
+    order: 1 !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Карточки контактов */
+  .contact-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .contact-info-card {
+    background: white !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(229, 231, 235, 0.8) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .contact-info-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+  }
+
+  /* Заголовок карточки контакта */
+  .contact-info-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .contact-info-icon {
+    width: 50px !important;
+    height: 50px !important;
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    flex-shrink: 0 !important;
+  }
+
+  .contact-info-content h4 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .contact-info-content p {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+  }
+
+  /* Кнопки действий */
+  .contact-action-btn {
+    width: 100% !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Социальные сети */
+  .social-networks {
+    margin-top: 2rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .social-networks h3 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+  }
+
+  .social-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Цветные карточки социальных сетей как на десктопе */
+  .social-card {
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+  }
+
+
+  /* Telegram - голубая карточка */
+  .telegram-card {
+    background: linear-gradient(135deg, #0088cc, #229ED9) !important;
+  }
+
+  .telegram-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(0, 136, 204, 0.3) !important;
+  }
+
+  /* Яндекс Дзен - оранжевая карточка */
+  .zen-card {
+    background: linear-gradient(135deg, #FF6B35, #F7931E) !important;
+  }
+
+  .zen-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.3) !important;
+  }
+
+  /* Иконки социальных сетей */
+  .social-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
+
+  /* Белый текст на цветном фоне */
+  .social-content h4 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.2rem !important;
+    color: white !important;
+  }
+
+  .social-content p {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin: 0 !important;
+  }
+
+  /* Карта - размещаем после контактов */
+  .contacts-map {
+    order: 2 !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .map-container {
+    background: white !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(229, 231, 235, 0.8) !important;
+  }
+
+  .map-header {
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+  }
+
+  .map-header h3 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .map-header p {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+  }
+
+  .map-frame {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .map-frame iframe {
+    width: 100% !important;
+    height: 250px !important;
+    border: none !important;
+    border-radius: 12px !important;
+  }
+
+  .map-info {
+    text-align: center !important;
+  }
+
+  .map-contact-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    font-size: 0.9rem !important;
+    color: #4b5563 !important;
+  }
+
+  /* Форма обратной связи */
+  .contacts-form {
+    order: 3 !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .contact-form-container {
+    background: white !important;
+    border-radius: 16px !important;
+    padding: 2rem 1.5rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(229, 231, 235, 0.8) !important;
+  }
+
+  .form-header {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .form-header h3 {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .form-header p {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+  }
+
+  /* Поля формы */
+  .form-group {
+    position: relative !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100% !important;
+    padding: 1rem !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    background: #f9fafb !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none !important;
+    border-color: #10b981 !important;
+    background: white !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+  }
+
+  .form-group label {
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    font-size: 1rem !important;
+    color: #6b7280 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+  }
+
+  .form-group input:focus+label,
+  .form-group input:not(:placeholder-shown)+label,
+  .form-group textarea:focus+label,
+  .form-group textarea:not(:placeholder-shown)+label {
+    top: -0.5rem !important;
+    left: 0.8rem !important;
+    font-size: 0.8rem !important;
+    color: #10b981 !important;
+    background: white !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Кнопка отправки */
+  .form-submit-btn {
+    width: 100% !important;
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .form-submit-btn:hover {
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3) !important;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .contacts-section {
+    padding: 1.5rem 0.5rem !important;
+  }
+
+  .contact-info-card,
+  .map-container,
+  .contact-form-container {
+    padding: 1.2rem !important;
+  }
+
+  .contact-info-icon {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .map-frame iframe {
+    height: 220px !important;
+  }
+}
+
+/* =====
+ МОБИЛЬНЫЕ СТИЛИ ДЛЯ ПОДВАЛА ===== */
+
+@media (max-width: 768px) {
+
+  .contacts-section .contacts-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .contacts-section .contacts-map .map-container,
+  .contacts-section .contacts-form .contact-form-container,
+  .contacts-section .contact-info-card {
+    min-width: 0 !important;
+  }
+
+  /* Выравнивание копирайта немного правее центра в мобильной версии */
+  .footer-bottom-mini {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 1rem 2rem !important;
+  }
+
+  .footer-bottom-mini span {
+    text-align: center !important;
+    /* Центрируем текст */
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    /* Убираем отступы */
+    margin: 0 auto !important;
+    /* Центрируем элемент */
+    position: relative !important;
+    left: 1 !important;
+    /* Убираем сдвиг */
+  }
+
+  /* Дополнительные стили для подвала на мобильных */
+  .modern-footer {
+    text-align: center !important;
+  }
+
+  .footer-row {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .footer-contacts-center {
+    order: 2 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-social-right {
+    order: 3 !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-logo-block {
+    order: 1 !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .footer-bottom-mini {
+    padding: 0.8rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .footer-bottom-mini span {
+    margin-left: 1rem !important;
+    /* Меньший сдвиг на маленьких экранах */
+    transform: translateX(0.3rem) !important;
+  }
+
+  .footer-row {
+    padding: 1.2rem 0.5rem !important;
+    gap: 1.2rem !important;
+  }
+}
