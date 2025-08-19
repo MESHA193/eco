@@ -1100,20 +1100,50 @@ function closeSubserviceOrderModal() {
     }
 }
 
+async function sendFormToServer(formPayload) {
+    try {
+        const response = await fetch('/api/send-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formPayload)
+        });
+        if (!response.ok) {
+            try { console.error('Send error:', await response.text()); } catch (e) {}
+            return false;
+        }
+        return true;
+    } catch (err) {
+        console.error('Ошибка отправки формы:', err);
+        return false;
+    }
+}
+
 function submitSubserviceOrder(event) {
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
 
-    const serviceName = formData.get('service');
-    const clientName = formData.get('name');
-    const clientPhone = formData.get('phone');
+    const payload = Object.fromEntries(formData.entries());
+    const subTitleEl = document.getElementById('subserviceModalTitle');
+    const orderServiceNameEl = document.getElementById('orderServiceName');
 
-    alert(`Спасибо за заявку!\n\nУслуга: ${serviceName}\nИмя: ${clientName}\nТелефон: ${clientPhone}\n\nМы свяжемся с вами в ближайшее время.`);
+    payload.formType = 'modal-order';
+    payload.context = {
+        subserviceTitle: subTitleEl && subTitleEl.textContent ? subTitleEl.textContent.trim() : undefined,
+        orderServiceName: orderServiceNameEl && orderServiceNameEl.textContent ? orderServiceNameEl.textContent.trim() : undefined
+    };
 
-    closeSubserviceOrderModal();
-    form.reset();
+    sendFormToServer(payload).then(ok => {
+        if (ok) {
+            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+            try { closeSubserviceOrderModal(); } catch (e) {}
+            try { closeOrderModal(); } catch (e) {}
+            form.reset();
+        } else {
+            alert('Не удалось отправить заявку. Попробуйте позже.');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -1133,6 +1163,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.stopPropagation();
                 if (typeof openCalendarModal === 'function') {
                     openCalendarModal();
+                }
+            });
+        }
+
+        // Отправка формы контактов теперь идёт напрямую через action
+        const contactFormEl = document.getElementById('contactForm');
+        if (contactFormEl) {
+            contactFormEl.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(contactFormEl).entries());
+                data.formType = 'contact';
+                data.context = {
+                    page: window.location.pathname
+                };
+                const ok = await sendFormToServer(data);
+                if (ok) {
+                    alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+                    contactFormEl.reset();
+                } else {
+                    alert('Ошибка при отправке. Попробуйте позже.');
                 }
             });
         }
