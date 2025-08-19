@@ -16,11 +16,19 @@
   margin: 0 auto !important;
 }
 
+.footer-legal-note {
+  margin-top: 8px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
 .footer-privacy-link {
-  color: #0ea5e9;
+  color: inherit;
   text-decoration: none;
+  border-bottom: 1px dotted rgba(156,163,175,0.6);
 }
 
 .footer-privacy-link:hover {
-  text-decoration: underline;
+  color: #d1d5db;
+  border-bottom-color: #d1d5db;
 }
