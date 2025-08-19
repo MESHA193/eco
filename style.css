@@ -521,6 +521,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.hero-title .gradient-text {
+  position: relative;
+  top: -0.15em !important;
+}
+
 .gradient-text {
   background: linear-gradient(135deg, #10b981, #059669, #047857);
   -webkit-background-clip: text;
