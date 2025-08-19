@@ -61,7 +61,7 @@
                     onclick="closeServiceModal()">
                     ←
                 </button>
-                <button class="modal-header-btn modal-close-btn" onclick="closeServiceModal()">
+                <button type="button" class="modal-header-btn modal-close-btn" onclick="closeAllServiceModals()">
                     ×
                 </button>
             </div>
@@ -92,7 +92,7 @@
                     onclick="backToServiceList()">
                     ←
                 </button>
-                <button class="modal-header-btn modal-close-btn" onclick="closeSubserviceOrderModal()">
+                <button type="button" class="modal-header-btn modal-close-btn" onclick="closeAllServiceModals()">
                     ×
                 </button>
             </div>
@@ -114,7 +114,7 @@
         <div class="service-modal-footer">
             <div class="modal-form-section">
                 <h4>Заказать услугу</h4>
-                <form class="modal-order-form" onsubmit="submitSubserviceOrder(event)">
+                <form class="modal-order-form" method="POST" action="sendmail.php">
                     <div class="form-row">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Ваше имя" required>

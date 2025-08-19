@@ -1207,9 +1207,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const serviceModal = document.getElementById('serviceModal');
         if (serviceModal) {
-            const closeBtn = serviceModal.querySelector('.modal-close');
+            const closeBtn = serviceModal.querySelector('.modal-close-btn, .modal-close');
             if (closeBtn) {
-                closeBtn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); closeAllServiceModals(); });
+                closeBtn.addEventListener('click', function(e){ e.preventDefault(); if (e.stopImmediatePropagation) e.stopImmediatePropagation(); e.stopPropagation(); closeAllServiceModals(); });
             }
 
             serviceModal.addEventListener('click', function (e) {
@@ -1223,9 +1223,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const subserviceModal = document.getElementById('subserviceOrderModal');
         if (subserviceModal) {
-            const closeBtn = subserviceModal.querySelector('.modal-close');
+            const closeBtn = subserviceModal.querySelector('.modal-close-btn, .modal-close');
             if (closeBtn) {
-                closeBtn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); closeAllServiceModals(); });
+                closeBtn.addEventListener('click', function(e){ e.preventDefault(); if (e.stopImmediatePropagation) e.stopImmediatePropagation(); e.stopPropagation(); closeAllServiceModals(); });
             }
 
             const backBtn = subserviceModal.querySelector('#subserviceBackToListBtn');
