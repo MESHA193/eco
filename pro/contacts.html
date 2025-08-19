@@ -257,26 +257,6 @@
     </button>
 
     <script src="script.js"></script>
-    <script>
-        // Обработка отправки формы
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Получаем данные формы
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Простая валидация
-            if (!data.name || !data.phone || !data.message) {
-                alert('Пожалуйста, заполните все обязательные поля');
-                return;
-            }
-
-            // Здесь можно добавить отправку на сервер
-            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
-            this.reset();
-        });
-    </script>
 </body>
 
 </html>
