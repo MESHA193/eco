@@ -1158,7 +1158,7 @@
                 <div class="service-modal-footer">
                     <div class="modal-form-section">
                         <h4>Заказать услугу</h4>
-                        <form class="modal-order-form" onsubmit="submitSubserviceOrder(event)">
+                        <form class="modal-order-form" method="POST" action="sendmail.php">
                             <div class="form-row">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Ваше имя *" required>
@@ -1215,7 +1215,7 @@
 
                 <div class="service-modal-footer">
                     <div class="modal-form-section">
-                        <form class="modal-order-form" onsubmit="submitSubserviceOrder(event)">
+                        <form class="modal-order-form" method="POST" action="sendmail.php">
                             <div class="form-row">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Ваше имя *" required>
